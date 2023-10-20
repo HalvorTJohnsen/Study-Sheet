@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1697803009 "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex" "Study Sheet.pdf" "Study Sheet" 1697803011 0
+["pdflatex"] 1697803504 "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex" "Study Sheet.pdf" "Study Sheet" 1697803507 0
   "C:/Users/halvo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1697735229 121553 e04cae8ff54a1775fa61f1ac39f29ca4 ""
   "C:/Users/halvo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1697697334 11548 9dbeacc8ba77e1c80bac6a3bf875bcb8 ""
   "C:/Users/halvo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1697696963 24141909 bf6130dfe702dbb606a522aea43909de ""
@@ -167,9 +167,9 @@
   "C:/Users/halvo/AppData/Local/Programs/MiKTeX/tex/latex/xifthen/xifthen.sty" 1448274436 5689 1bfa68243e89a54479e7d0580773c57e ""
   "C:/Users/halvo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/halvo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Study Sheet.aux" 1697803011 7555 85160e5a29aa81173cf7b0623643f876 "pdflatex"
-  "Study Sheet.tex" 1697803007 28724 0735b883291b95ae4d19d201410a2158 ""
-  "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex" 1697803007 28724 0735b883291b95ae4d19d201410a2158 ""
+  "Study Sheet.aux" 1697803507 7555 85160e5a29aa81173cf7b0623643f876 "pdflatex"
+  "Study Sheet.tex" 1697803503 28694 9cba63cac998065f47f15a7c35d55e20 ""
+  "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex" 1697803503 28694 9cba63cac998065f47f15a7c35d55e20 ""
   "figures/375px-VanDerPolPhaseSpace.png" 1697789959 27262 a6a5392993561d4cfac72cee7bd75fbf ""
   "figures/Lasalles.eps" 1697789959 4333 d043f1b2bd6f79176ecfc7e0f81ea006 ""
   "figures/Lasalles.eps_tex" 1697789959 2539 ae2d14b9fe9216f2177a033188228dcf ""
