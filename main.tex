@@ -282,7 +282,7 @@ $t \rightarrow \infty$.
 Let $x=0$ be an equilibrium point for \[\dot{x} = f(x)\]
 Let $V: D \rightarrow R$ be a continuously differentiable positive definite
 function on a domain $D$ containing the origin $x=0$, such that $\dot V(x) \leq
-	0$ in $D$. Let $S=\{x \in D\:|\:\dot V(x) = 0\}$ and suppose that no solution
+0$ in $D$. Let $S=\{x \in D\:|\:\dot V(x) = 0\}$ and suppose that no solution
 can stay identically in $S$, other than the trivial solution $x(t) \equiv 0$.
 Then, the origin is asymptotically stable. If a $A$ matrix i Hurwitz, we can
 conclude asymptotic stability.
@@ -517,27 +517,27 @@ then $x=0$ is uniformly stable.
 	\resizebox{0.45\textwidth}{!}{\input{figures/Lyapunov_analysis.pdf_tex}}
 \end{figure}
 \begin{frm-prf}
-	The derivative of $V$ along the trajectories of (4.15) is given by
-	$$
-		\dot{V}(t, x)=\frac{\partial V}{\partial t}+\frac{\partial V}{\partial x} f(t, x) \leq 0
-	$$
-	Choose $r>0$ and $c>0$ such that $B_r \subset D$ and $c<\min _{\|x\|=r}
-		W_1(x)$. Then, $\left\{x \in B_r \mid W_1(x) \leq c\right\}$ is in the interior
-	of $B_r$. Define a time-dependent set $\Omega_{t, c}$ by $$ \Omega_{t,
-			c}=\left\{x \in B_r \mid V(t, x) \leq c\right\} $$
+The derivative of $V$ along the trajectories of (4.15) is given by
+$$
+	\dot{V}(t, x)=\frac{\partial V}{\partial t}+\frac{\partial V}{\partial x} f(t, x) \leq 0
+$$
+Choose $r>0$ and $c>0$ such that $B_r \subset D$ and $c<\min _{\|x\|=r}
+	W_1(x)$. Then, $\left\{x \in B_r \mid W_1(x) \leq c\right\}$ is in the interior
+of $B_r$. Define a time-dependent set $\Omega_{t, c}$ by $$ \Omega_{t,
+		c}=\left\{x \in B_r \mid V(t, x) \leq c\right\} $$
 
-	The set $\Omega_{t, c}$ contains $\left\{x \in B_r \mid W_2(x) \leq c\right\}$
-	since $$ W_2(x) \leq c \Rightarrow V(t, x) \leq c $$
+The set $\Omega_{t, c}$ contains $\left\{x \in B_r \mid W_2(x) \leq c\right\}$
+since $$ W_2(x) \leq c \Rightarrow V(t, x) \leq c $$
 
-	On the other hand, $\Omega_{t, c}$ is a subset of $\left\{x \in B_r \mid W_1(x)
-		\leq c\right\}$ since $$ V(t, x) \leq c \Rightarrow W_1(x) \leq c $$
+On the other hand, $\Omega_{t, c}$ is a subset of $\left\{x \in B_r \mid W_1(x)
+	\leq c\right\}$ since $$ V(t, x) \leq c \Rightarrow W_1(x) \leq c $$
 
-	Thus, $$ \left\{x \in B_r \mid W_2(x) \leq c\right\} \subset \Omega_{t, c}
-		\subset\left\{x \in B_r \mid W_1(x) \leq c\right\} \subset B_r \subset D $$ for
-	all $t \geq 0$. These five nested sets are sketched in Figure 4.7. The setup of
-	Figure 4.7 is similar to that of Figure 4.1, except that the surface $V(t,
-		x)=c$ is now dependent on $t$, and that is why it is surrounded by the
-	time-independent surfaces $W_1(x)=c$ and $W_2(x)=c$.
+Thus, $$ \left\{x \in B_r \mid W_2(x) \leq c\right\} \subset \Omega_{t, c}
+	\subset\left\{x \in B_r \mid W_1(x) \leq c\right\} \subset B_r \subset D $$ for
+all $t \geq 0$. These five nested sets are sketched in Figure 4.7. The setup of
+Figure 4.7 is similar to that of Figure 4.1, except that the surface $V(t,
+	x)=c$ is now dependent on $t$, and that is why it is surrounded by the
+time-independent surfaces $W_1(x)=c$ and $W_2(x)=c$.
 \end{frm-prf}
 \subsubsection{Lyapunov theorem: Asymptotical Stability}
 If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow

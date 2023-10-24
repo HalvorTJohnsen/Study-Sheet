@@ -1,10 +1,10 @@
 INFO:  latexindent.pl version 3.23.3, 2023-10-13, a script to indent .tex files
        latexindent.pl lives here: C:/Users/halvo/AppData/Local/Programs/MiKTeX/scripts/latexindent/
-       Mon Oct 23 22:27:48 2023
-       Filename: c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\H�st 2023\Uline�re Systemer\Study Sheet\Study-Sheet\Study Sheet.tex
+       Tue Oct 24 19:28:29 2023
+       Filename: c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\Autumn 2023\Study Sheets\TTK4150 - Nonlinear Control Systems\TTK4150-Study-Sheet\main.tex
 INFO:  Processing switches:
 INFO:  Directory for backup files and indent.log:
-       c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\H�st 2023\Uline�re Systemer\Study Sheet\Study-Sheet
+       c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\Autumn 2023\Study Sheets\TTK4150 - Nonlinear Control Systems\TTK4150-Study-Sheet
 INFO:  Perl modules are being loaded from the following directories:
        C:/Strawberry/perl/lib/FindBin.pm
        C:/Strawberry/perl/vendor/lib/YAML/Tiny.pm
