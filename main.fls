@@ -1,7 +1,7 @@
-PWD c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\Høst 2023\Ulineære Systemer\Study Sheet\Study-Sheet
+PWD c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\Autumn 2023\Study Sheets\TTK4150 - Nonlinear Control Systems\TTK4150-Study-Sheet
 INPUT C:\Users\halvo\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\Høst 2023\Ulineære Systemer\Study Sheet\Study-Sheet\Study Sheet.tex
-OUTPUT Study Sheet.log
+INPUT c:\Users\halvo\OneDrive - NTNU\Documents\NTNU\Autumn 2023\Study Sheets\TTK4150 - Nonlinear Control Systems\TTK4150-Study-Sheet\main.tex
+OUTPUT main.log
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
@@ -226,10 +226,10 @@ INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transpa
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent.sty
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent-nometadata.sty
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\transparent\transparent-nometadata.sty
-INPUT .\Study Sheet.aux
-INPUT .\Study Sheet.aux
-INPUT Study Sheet.aux
-OUTPUT Study Sheet.aux
+INPUT .\main.aux
+INPUT .\main.aux
+INPUT main.aux
+OUTPUT main.aux
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -263,7 +263,7 @@ INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-OUTPUT Study Sheet.pdf
+OUTPUT main.pdf
 INPUT C:\Users\halvo\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\figures\375px-VanDerPolPhaseSpace.png
 INPUT .\figures\375px-VanDerPolPhaseSpace.png
@@ -341,8 +341,8 @@ INPUT .\figures\Lyapunov_analysis.pdf
 INPUT .\figures\Lyapunov_analysis.pdf
 INPUT .\figures\Lyapunov_analysis.pdf
 INPUT .\figures\Lyapunov_analysis.pdf
-OUTPUT Study Sheet.thm
-INPUT Study Sheet.aux
+OUTPUT main.thm
+INPUT main.aux
 INPUT C:\Users\halvo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\halvo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\halvo\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb

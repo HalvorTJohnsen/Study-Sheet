@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.10.23)  24 OCT 2023 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.10.23)  24 OCT 2023 19:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex"
-(c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex
+**"c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Autumn 2023/Study Sheets/TTK4150 - Nonlinear Control Systems/TTK4150-Study-Sheet/main.tex"
+(c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Autumn 2023/Study Sheets/TTK4150 - Nonlinear Control Systems/TTK4150-Study-Sheet/main.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
 (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -657,8 +657,8 @@ Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color 
 ))
 \c@frm-ex=\count344
 \c@frm-prf=\count345
- (Study Sheet.aux)
-\openout1 = `"Study Sheet.aux"'.
+ (main.aux)
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
@@ -763,10 +763,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--216
 
 [3] (figures/Lasalles.eps_tex
 Package epstopdf Info: Source file: <figures/Lasalles.eps>
-(epstopdf)                    date: 2023-10-23 21:27:23
+(epstopdf)                    date: 2023-10-24 19:23:54
 (epstopdf)                    size: 4333 bytes
 (epstopdf)             Output file: <figures/Lasalles-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-10-23 21:27:23
+(epstopdf)                    date: 2023-10-24 19:23:54
 (epstopdf)                    size: 3734 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/Lasalles-eps-converted-to.pdf figures/Lasalles.eps>
 (epstopdf)             \includegraphics on input line 56.
@@ -788,10 +788,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--323
 
 [6] [7] [8] (figures/Lyapunov_functions.eps_tex
 Package epstopdf Info: Source file: <figures/Lyapunov_functions.eps>
-(epstopdf)                    date: 2023-10-23 21:42:48
-(epstopdf)                    size: 3226 bytes
+(epstopdf)                    date: 2023-10-24 19:23:54
+(epstopdf)                    size: 3328 bytes
 (epstopdf)             Output file: <figures/Lyapunov_functions-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-10-23 21:44:14
+(epstopdf)                    date: 2023-10-24 19:23:54
 (epstopdf)                    size: 2724 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/Lyapunov_functions-eps-converted-to.pdf figures/Lyapunov_functions.eps>
 (epstopdf)             \includegraphics on input line 56.
@@ -837,24 +837,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 598--601
  []
 
 \tf@thm=\write4
-\openout4 = `"Study Sheet.thm"'.
+\openout4 = `main.thm'.
 
-[11] (Study Sheet.aux)
+[11] (main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17917 strings out of 474824
- 358157 string characters out of 5750976
+ 17916 strings out of 474824
+ 358330 string characters out of 5750976
  1940043 words of memory out of 5000000
- 39476 multiletter control sequences out of 15000+600000
+ 39475 multiletter control sequences out of 15000+600000
  565114 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,93p,726b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,20n,93p,746b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\halvo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Study Sheet.pdf" (11 pages, 241987 bytes).
+Output written on main.pdf (11 pages, 241979 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
