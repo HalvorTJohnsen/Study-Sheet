@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1698159340 "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex" "Study Sheet.pdf" "Study Sheet" 1698159343 0
+["pdflatex"] 1698161138 "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex" "Study Sheet.pdf" "Study Sheet" 1698161141 0
   "C:/Users/halvo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1698088971 121730 c7eb46e8480b7f0cd0d552b8c1387fb4 ""
   "C:/Users/halvo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1697697334 11548 9dbeacc8ba77e1c80bac6a3bf875bcb8 ""
   "C:/Users/halvo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1698089037 24175185 4369ac015b078bc75b9ded854658e05f ""
@@ -167,9 +167,9 @@
   "C:/Users/halvo/AppData/Local/Programs/MiKTeX/tex/latex/xifthen/xifthen.sty" 1448274436 5689 1bfa68243e89a54479e7d0580773c57e ""
   "C:/Users/halvo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/halvo/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Study Sheet.aux" 1698159343 7642 dd7193627faedf7478c5353413792f2b "pdflatex"
-  "Study Sheet.tex" 1698159338 30352 b44fc178c7465e07307ded5282e06a6a ""
-  "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex" 1698159338 30352 b44fc178c7465e07307ded5282e06a6a ""
+  "Study Sheet.aux" 1698161140 7642 dd7193627faedf7478c5353413792f2b "pdflatex"
+  "Study Sheet.tex" 1698161136 30356 cdff32f430938b42c9c222984b526864 ""
+  "c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex" 1698161136 30356 cdff32f430938b42c9c222984b526864 ""
   "figures/375px-VanDerPolPhaseSpace.png" 1698089243 27262 a6a5392993561d4cfac72cee7bd75fbf ""
   "figures/Lasalles.eps" 1698089243 4333 d043f1b2bd6f79176ecfc7e0f81ea006 ""
   "figures/Lasalles.eps_tex" 1698089243 2539 ae2d14b9fe9216f2177a033188228dcf ""
