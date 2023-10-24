@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.10.19)  23 OCT 2023 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.10.23)  23 OCT 2023 22:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex"
-(c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex
+**"c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex"
+(c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study-Sheet/Study Sheet.tex
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+L3 programming layer <2023-10-10>
 (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
 (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
@@ -235,13 +235,13 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
  (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )) (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2023-08-29 L3 programming layer (loader) 
+Package: expl3 2023-10-10 L3 programming layer (loader) 
  (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-10-10 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box99
 ))
-Package: l3keys2e 2023-08-29 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count303
@@ -478,7 +478,7 @@ Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
-Package: xparse 2023-08-29 L3 Experimental document command parser
+Package: xparse 2023-10-10 L3 Experimental document command parser
 ) (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count327
@@ -656,23 +656,24 @@ Package: transparent 2022-10-27 v1.5 Transparency with color stacks
 Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
 ))
 \c@frm-ex=\count344
+\c@frm-prf=\count345
  (Study Sheet.aux)
 \openout1 = `"Study Sheet.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -710,16 +711,16 @@ LaTeX Font Info:    ... okay on input line 51.
 
 (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count345
+\scratchcounter=\count346
 \scratchdimen=\dimen287
 \scratchbox=\box121
-\nofMPsegments=\count346
-\nofMParguments=\count347
+\nofMPsegments=\count347
+\nofMParguments=\count348
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count348
+\MPscratchCnt=\count349
 \MPscratchDim=\dimen288
-\MPnumerator=\count349
-\makeMPintoPDFobject=\count350
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
 \everyMPtoPDFconversion=\toks61
 ) (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -735,31 +736,127 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
  (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
  (C:\Users\halvo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex:82: I can't write on file `"Study Sheet.pdf"'.
-(Press Enter to retry, or Control-C to exit; default file extension is `.pdf')
-Please type another file name for output
-c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex:82: Emergency stop.
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.82 \newpage
-             
-*** (job aborted, file error in nonstop mode)
+) [1
 
- 
+{C:/Users/halvo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<figures/375px-VanDerPolPhaseSpace.png, id=17, 376.40625pt x 245.91875pt>
+File: figures/375px-VanDerPolPhaseSpace.png Graphic file (type png)
+<use figures/375px-VanDerPolPhaseSpace.png>
+Package pdftex.def Info: figures/375px-VanDerPolPhaseSpace.png  used on input line 104.
+(pdftex.def)             Requested size: 193.47577pt x 126.40753pt.
+ [2 <./figures/375px-VanDerPolPhaseSpace.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 202--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--216
+
+ []
+
+[3] (figures/Lasalles.eps_tex
+Package epstopdf Info: Source file: <figures/Lasalles.eps>
+(epstopdf)                    date: 2023-10-23 21:27:23
+(epstopdf)                    size: 4333 bytes
+(epstopdf)             Output file: <figures/Lasalles-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-10-23 21:27:23
+(epstopdf)                    size: 3734 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/Lasalles-eps-converted-to.pdf figures/Lasalles.eps>
+(epstopdf)             \includegraphics on input line 56.
+Package epstopdf Info: Output file is already uptodate.
+<figures/Lasalles-eps-converted-to.pdf, id=28, 355.3275pt x 239.89626pt>
+File: figures/Lasalles-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/Lasalles-eps-converted-to.pdf>
+Package pdftex.def Info: figures/Lasalles-eps-converted-to.pdf  used on input line 56.
+(pdftex.def)             Requested size: 241.84842pt x 163.28468pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 267--281
+
+ []
+
+[4] [5 <./figures/Lasalles-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
+
+ []
+
+[6] [7] [8] (figures/Lyapunov_functions.eps_tex
+Package epstopdf Info: Source file: <figures/Lyapunov_functions.eps>
+(epstopdf)                    date: 2023-10-23 21:42:48
+(epstopdf)                    size: 3226 bytes
+(epstopdf)             Output file: <figures/Lyapunov_functions-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-10-23 21:44:14
+(epstopdf)                    size: 2724 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/Lyapunov_functions-eps-converted-to.pdf figures/Lyapunov_functions.eps>
+(epstopdf)             \includegraphics on input line 56.
+Package epstopdf Info: Output file is already uptodate.
+<figures/Lyapunov_functions-eps-converted-to.pdf, id=53, 175.65625pt x 179.67125pt>
+File: figures/Lyapunov_functions-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/Lyapunov_functions-eps-converted-to.pdf>
+Package pdftex.def Info: figures/Lyapunov_functions-eps-converted-to.pdf  used on input line 56.
+(pdftex.def)             Requested size: 189.60661pt x 193.95705pt.
+) (figures/Lyapunov_analysis.pdf_tex
+<figures/Lyapunov_analysis.pdf, id=54, page=1, 381.36992pt x 286.8038pt>
+File: figures/Lyapunov_analysis.pdf Graphic file (type pdf)
+<use figures/Lyapunov_analysis.pdf, page 1>
+Package pdftex.def Info: figures/Lyapunov_analysis.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 381.36992pt x 286.8206pt.
+<figures/Lyapunov_analysis.pdf, id=55, page=2, 381.36992pt x 286.8038pt>
+File: figures/Lyapunov_analysis.pdf Graphic file (type pdf)
+<use figures/Lyapunov_analysis.pdf, page 2>
+Package pdftex.def Info: figures/Lyapunov_analysis.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 381.36992pt x 286.8206pt.
+<figures/Lyapunov_analysis.pdf, id=56, page=3, 381.36992pt x 286.8038pt>
+File: figures/Lyapunov_analysis.pdf Graphic file (type pdf)
+<use figures/Lyapunov_analysis.pdf, page 3>
+Package pdftex.def Info: figures/Lyapunov_analysis.pdf , page3 used on input line 61.
+(pdftex.def)             Requested size: 381.36992pt x 286.8206pt.
+<figures/Lyapunov_analysis.pdf, id=57, page=4, 381.36992pt x 286.8038pt>
+File: figures/Lyapunov_analysis.pdf Graphic file (type pdf)
+<use figures/Lyapunov_analysis.pdf, page 4>
+Package pdftex.def Info: figures/Lyapunov_analysis.pdf , page4 used on input line 63.
+(pdftex.def)             Requested size: 381.36992pt x 286.8206pt.
+)
+Package mdframed Info: Not enough space on this page on input line 541.
+ [9 <./figures/Lyapunov_functions-eps-converted-to.pdf> <./figures/Lyapunov_analysis.pdf> <./figures/Lyapunov_analysis.pdf> <./figures/Lyapunov_analysis.pdf> <./figures/Lyapunov_analysis.pdf>]
+Package mdframed Info: Not enough space on this page on input line 541.
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 586--589
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--601
+
+ []
+
+\tf@thm=\write4
+\openout4 = `"Study Sheet.thm"'.
+
+[11] (Study Sheet.aux)
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-10-10>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 17745 strings out of 475248
- 353159 string characters out of 5757812
- 1926785 words of memory out of 5000000
- 38909 multiletter control sequences out of 15000+600000
- 561286 words of font info for 49 fonts, out of 8000000 for 9000
+ 17917 strings out of 474824
+ 358157 string characters out of 5750976
+ 1940043 words of memory out of 5000000
+ 39476 multiletter control sequences out of 15000+600000
+ 565114 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,5n,93p,561b,112s stack positions out of 10000i,1000n,20000p,200000b,200000s
-c:/Users/halvo/OneDrive - NTNU/Documents/NTNU/Høst 2023/Ulineære Systemer/Study Sheet/Study Sheet.tex:82:  ==> Fatal error occurred, no output PDF file produced!
+ 84i,20n,93p,726b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\halvo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/halvo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Study Sheet.pdf" (11 pages, 241975 bytes).
+PDF statistics:
+ 129 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,52 +1,57 @@
-\documentclass{article} 
-\usepackage{blindtext} 
+\documentclass{article}
+\usepackage{blindtext}
 \usepackage{geometry}
-\usepackage{multicol} 
-\usepackage{amsmath} 
+\usepackage{multicol}
+\usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[dvipsnames]{xcolor} 
-\usepackage{lipsum} 
+\usepackage[dvipsnames]{xcolor}
+\usepackage{lipsum}
 \usepackage{amssymb}
-\usepackage{tikz} 
+\usepackage{tikz}
 \usepackage{ntheorem}
 \usepackage{mdframed}
 \usepackage{float}
 \usepackage{color}
 \usepackage[shortlabels]{enumitem}
 
-
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
 
-
-\pdfsuppresswarningpagegroup=1 
+\pdfsuppresswarningpagegroup=1
 
 \geometry{ a4paper, total={170mm,257mm},
-            left=20mm, top=20mm, }
+	left=20mm, top=20mm, }
 
 \theoremseparator{}
 \newmdtheoremenv[
-    skipabove=10pt,
-    skipbelow=10pt,
-    linecolor=black,
-    backgroundcolor=gray!10,
-    roundcorner=5pt,
+	skipabove=10pt,
+	skipbelow=10pt,
+	linecolor=black,
+	backgroundcolor=gray!10,
+	roundcorner=5pt,
 ]{frm-ex}{Example}
 
+\theoremseparator{}
+\newmdtheoremenv[
+	skipabove=10pt,
+	skipbelow=10pt,
+	linecolor=black,
+	backgroundcolor=gray!10,
+	roundcorner=5pt,
+]{frm-prf}{Proof}
+
 \newcommand{\SubItem}[1]{
-    {\setlength\itemindent{15pt} \item[-] #1}
+	{\setlength\itemindent{15pt} \item[-] #1}
 }
 
 \newenvironment{rcases}
-  {\left.\begin{aligned}}
-  {\end{aligned}\right\rbrace}
+{\left.\begin{aligned}}
+		{\end{aligned}\right\rbrace}
 
-\newcommand{\mathbbD}{\mathbb{D}} 
+\newcommand{\mathbbD}{\mathbb{D}}
 \newcommand{\mathbbR}{\mathbb{R}}
-
-
 
 \begin{document}
 %\begin{multicols*}{2}
@@ -59,7 +64,10 @@ Let $f(t,x)$ be piecewise continuous in $t$ and satisfy the Lipschitz condition
 \end{equation*}
 $\forall x,y \in B = \{x \in \mathbb{R}^n\; | \; ||x-x_0|| \leq r\}, \; \forall t \in [t_0,t_1]$. Then, there exists some $\delta > 0$ such that the state equation $\dot x = f(t,x)$ with $x(t_0)=x_0$ has a unique solution over $[t_0,t_0+\delta]$.
 \subsubsection{Lipschitz Condition}
-Let $f \: : \: [a,b] \times D \rightarrow R^m$ be continuous or some domain $D \subset R^n$. Suppose that $[\partial f / \partial x]$ exists and is continuous on $[a,b] \times D$. If, for a convex subset $W \subset D$, there is a constant $L \geq 0$ such that
+Let $f \: : \: [a,b] \times D \rightarrow R^m$ be continuous or some domain $D
+	\subset R^n$. Suppose that $[\partial f / \partial x]$ exists and is continuous
+on $[a,b] \times D$. If, for a convex subset $W \subset D$, there is a constant
+$L \geq 0$ such that
 \begin{equation*}
 	\left|\left|\frac{\partial f}{\partial x}(t,x)\right|\right| \leq L
 \end{equation*}
@@ -69,9 +77,13 @@ on $[a,b] \times W$, then
 \end{equation*}
 for all $t \in [a,b], \: x \in W$, and $y \in W$.
 \subsubsection{Locally Lipschitz}
-If $f(t,x)$ and $[\partial f / \partial x](t,x)$ are continuous on $[a,b] \times D$, for some domain $D \subset R^n$, then $f$ locally Lipschitz in $x$ on $[a,b] \times D$.
+If $f(t,x)$ and $[\partial f / \partial x](t,x)$ are continuous on $[a,b]
+	\times D$, for some domain $D \subset R^n$, then $f$ locally Lipschitz in $x$
+on $[a,b] \times D$.
 \subsubsection{Globally Lipschitz}
-If $f(t,x)$ and $[\partial f / \partial x](t,x)$ are continuous on $[a,b] \times R^n$, then $f$ is globally Lipschitz in $x$ on $[a,b] \times R^n$ if and only if $[\partial f / \partial x]$ is uniformly bounded on $[a,b] \times R^n$
+If $f(t,x)$ and $[\partial f / \partial x](t,x)$ are continuous on $[a,b]
+	\times R^n$, then $f$ is globally Lipschitz in $x$ on $[a,b] \times R^n$ if and
+only if $[\partial f / \partial x]$ is uniformly bounded on $[a,b] \times R^n$
 \subsubsection{Global Existence and Uniqueness}
 Suppose that $f(t,x)$ is piecewise continuous in $t$ and satisfies
 \begin{equation*}
@@ -93,21 +105,25 @@ where $V: \mathbb{R}^2 \to \mathbb{R}^2$ is a smooth function. A trajectory of t
 	\caption{Stable Limit Cycle}
 \end{figure}
 \subsubsection{Poincaré-Bendixson Criterion}
-Consider the system \(\dot x = f(x)\) and let $M$ be a closed bounded subset of the plane such that
+Consider the system \(\dot x = f(x)\) and let $M$ be a closed bounded subset of
+the plane such that
 \begin{itemize}
 	\item $M$ contains no equilibrium points or contains only one equilibrium point such that the Jacobian matrix $[\partial f / \partial x]$ at this point has eigenvalues with positive real parts. (Hence, the equilibrium point is unstable focus or unstable node.)
 	\item  Every trajectory starting in $M$ stays in $M$ for all future time.
 \end{itemize}
 Then, $M$ contains a periodic orbit of $\dot x = f(x)$.
 \subsubsection{Benixson Criterion}
-If, on a simply connected region ($\mathcal{C}^1$) $D$ of the plane, the expression $\partial f_1 / \partial x_1 + \partial f_2 / \partial x_2$ is not identically zero and does not change sign, then $\dot x= f(x)$ has no periodic orbits lying entirely in D.
-\newpage
+If, on a simply connected region ($\mathcal{C}^1$) $D$ of the plane, the
+expression $\partial f_1 / \partial x_1 + \partial f_2 / \partial x_2$ is not
+identically zero and does not change sign, then $\dot x= f(x)$ has no periodic
+orbits lying entirely in D. \newpage
 \section{Lyapunov Stability}
 \subsection{Autonomous Systems}
 \subsubsection{Stability Principles}
 The equilibrium point $x=0$ of $\dot x = f(X)$ is
 \begin{itemize}
-	\item stable if, for each $\epsilon > 0$, there is a $\delta = \delta(\epsilon) > 0$ such that
+	\item stable if, for each $\epsilon > 0$, there is a $\delta = \delta(\epsilon) > 0$
+	      such that
 	      \begin{equation*}
 		      ||x(0)|| < \delta \Rightarrow ||x(t)|| < \epsilon, \quad \forall t \geq 0
 	      \end{equation*}
@@ -149,9 +165,9 @@ In other words
 	\end{bmatrix}
 \end{equation}
 \subsubsection{Asymptotically Stable}
-Let $x = 0$ be an equilibrium point and $D \subset R^n$ be a domain
-containing $x = 0$. Let $V\::\:D \rightarrow R$ be a continuously differentiable function such
-that
+Let $x = 0$ be an equilibrium point and $D \subset R^n$ be a domain containing
+$x = 0$. Let $V\::\:D \rightarrow R$ be a continuously differentiable function
+such that
 \begin{equation}
 	V(0) = 0 \quad \textrm{and} \quad V(x) > 0 \; \textrm{in} \; D - \{0\}
 \end{equation}
@@ -164,7 +180,8 @@ Then $x=0$ is stable. Moreover, if
 \end{equation}
 then $x=0$ is asymptotically stable.
 \subsubsection{Globally Asymptotic stable}
-Let $x=0$ be an equilibrium point or $\dot x = f(x)$. Let $V : \mathbb{R}^n \rightarrow \mathbb{R}$ be a continuously differentiable function such that
+Let $x=0$ be an equilibrium point or $\dot x = f(x)$. Let $V : \mathbb{R}^n
+	\rightarrow \mathbb{R}$ be a continuously differentiable function such that
 \begin{equation*}
 	V(0) = 0 \text{  and  } V(x) > 0, \; \forall x \neq 0
 \end{equation*}
@@ -172,7 +189,8 @@ Let $x=0$ be an equilibrium point or $\dot x = f(x)$. Let $V : \mathbb{R}^n \rig
 	||x|| \rightarrow \infty \Rightarrow V(x) \rightarrow \infty
 \end{equation*}
 \subsubsection{Radially Unbounded Function}
-A radially unbounded function is a function $f : \mathbb{R}^n \rightarrow \mathbb{R}$ for which
+A radially unbounded function is a function $f : \mathbb{R}^n \rightarrow
+	\mathbb{R}$ for which
 \begin{equation*}
 	||x|| \rightarrow \infty \Rightarrow f(x) \rightarrow \infty
 \end{equation*}
@@ -181,11 +199,20 @@ Or equivalently
 	\forall c > 0 : \exists r > 0 : \forall x \in \mathbb{R}^n : [||x|| > r \Rightarrow f(x) > c]
 \end{equation*}
 \subsubsection{Region of attraction}
-The region of attraction is also called the region of asymptotic stability. The region of attraction may be hard to calculate exactly, but Lyapunov functions can be used to estimate this region.
-\\\\
-First of all, the region of attraction must satisfy the following: from the definition of asymptotic stability we see that if there is a Lyapunov function that satisfy the condition of asymptotic stability over a domain $\mathbb{D}$ and if $\Omega_c = \{  x \in \mathbb{R}^n | V(x) \leq c\}$ is bounded and contained in $\mathbbD$, then ecery trajectory starting in $\Omega_c$ remains in $\Omega_c$ and approaches the origin as $t \to \infty$
-\\\\
-Let $x=0$ be an asymptotically stable equilibrium point of the system $\dot x = f(x)$, where $f : \mathbb{D} \to \mathbb{R}^n$ is locally lipschitz and $\mathbb{D} \subset \mathbb{R}^n$ is a domain that contains the origin. Let $t \to \phi(t;x_0)$ be the solution of $\dot x = f(x)$  that starts at initial state $x_0$ at time $t=0$. The region of attraction of the origin, denoted by $R_A$, is defined by
+The region of attraction is also called the region of asymptotic stability. The
+region of attraction may be hard to calculate exactly, but Lyapunov functions
+can be used to estimate this region. \\\\ First of all, the region of
+attraction must satisfy the following: from the definition of asymptotic
+stability we see that if there is a Lyapunov function that satisfy the
+condition of asymptotic stability over a domain $\mathbb{D}$ and if $\Omega_c =
+	\{ x \in \mathbb{R}^n | V(x) \leq c\}$ is bounded and contained in $\mathbbD$,
+then ecery trajectory starting in $\Omega_c$ remains in $\Omega_c$ and
+approaches the origin as $t \to \infty$ \\\\ Let $x=0$ be an asymptotically
+stable equilibrium point of the system $\dot x = f(x)$, where $f : \mathbb{D}
+	\to \mathbb{R}^n$ is locally lipschitz and $\mathbb{D} \subset \mathbb{R}^n$ is
+a domain that contains the origin. Let $t \to \phi(t;x_0)$ be the solution of
+$\dot x = f(x)$ that starts at initial state $x_0$ at time $t=0$. The region of
+attraction of the origin, denoted by $R_A$, is defined by
 \begin{equation*}
 	R_A = \{ x_0 \in \mathbb{D} : \phi(t;x_0) \text{ is defined }\forall t \geq 0 \text{ and } \phi(t;x_0) \to \text{ as } t \to \infty \}
 \end{equation*}
@@ -195,35 +222,35 @@ I.e. the region of attraction $R_A$ is the set of all points $x_0$ in $\mathbb{D
 \end{equation*}
 is defined for all $t \geq 0$ and converges to the origin as $t \to \infty$.
 \begin{frm-ex}[Example of region of attraction]
-    \item
-	Our domain $\mathbbD$ is defined as
-	\begin{equation*}
-		\mathbbD = \{ x \in \mathbbR^2 : x_1 + x_2 < 1\}
-	\end{equation*}
-	where $\dot V(x) < 0$. Our region of attraction is defined as
-	\begin{equation*}
-		\Omega_c = \{ x \in \mathbbR^2 : V(x) \leq c \}
-	\end{equation*}
-	where $c < \min(V(x)$ and $x \in \partial c$ (x is on the border of $c$).
-	\begin{equation*}
-		\begin{split}
-			x_1 + x_2 & = 1       \\
-			x_1       & = 1 - x_2
-		\end{split}
-	\end{equation*}
-	Then we minimize $V(x)$ with respect of $x_2$
-	\begin{equation*}
-		\begin{split}
-			\min(V(x))_{x_2}\bigg|_{x_1=1-x_2} & = min_{x_2}(\frac{1}{2}((1-x_2)^2+x_2^2)) = 0               \\
-			\min_{x_2}(\frac{1}{2}-x_2+x_2^2)  & = \frac{\partial}{\partial x_2} (\frac{1}{2}-x_2+x_2^2) = 0 \\
-			-1 + x_2                           & = 0                                                         \\
-			x_2                                & = \frac{1}{2} \quad \to \quad x_1 = \frac{1}{2}
-		\end{split}
-	\end{equation*}
-	Further, we must satisfy $c < V(\frac{1}{2}, \frac{1}{2}) = \frac{1}{4}$. We have therefore the following region of attraction
-	\begin{equation*}
-		\Omega_{\frac{1}{4}} = \{x \in \mathbbR^2 : V(x) \leq \frac{1}{4}\}
-	\end{equation*}
+\item
+Our domain $\mathbbD$ is defined as
+\begin{equation*}
+	\mathbbD = \{ x \in \mathbbR^2 : x_1 + x_2 < 1\}
+\end{equation*}
+where $\dot V(x) < 0$. Our region of attraction is defined as
+\begin{equation*}
+	\Omega_c = \{ x \in \mathbbR^2 : V(x) \leq c \}
+\end{equation*}
+where $c < \min(V(x)$ and $x \in \partial c$ (x is on the border of $c$).
+\begin{equation*}
+	\begin{split}
+		x_1 + x_2 & = 1       \\
+		x_1       & = 1 - x_2
+	\end{split}
+\end{equation*}
+Then we minimize $V(x)$ with respect of $x_2$
+\begin{equation*}
+	\begin{split}
+		\min(V(x))_{x_2}\bigg|_{x_1=1-x_2} & = min_{x_2}(\frac{1}{2}((1-x_2)^2+x_2^2)) = 0               \\
+		\min_{x_2}(\frac{1}{2}-x_2+x_2^2)  & = \frac{\partial}{\partial x_2} (\frac{1}{2}-x_2+x_2^2) = 0 \\
+		-1 + x_2                           & = 0                                                         \\
+		x_2                                & = \frac{1}{2} \quad \to \quad x_1 = \frac{1}{2}
+	\end{split}
+\end{equation*}
+Further, we must satisfy $c < V(\frac{1}{2}, \frac{1}{2}) = \frac{1}{4}$. We have therefore the following region of attraction
+\begin{equation*}
+	\Omega_{\frac{1}{4}} = \{x \in \mathbbR^2 : V(x) \leq \frac{1}{4}\}
+\end{equation*}
 \end{frm-ex}
 \subsection{The Invariance Principle}
 \subsubsection{Invariant Set}
@@ -237,18 +264,28 @@ A set $M$ is a positively invariant set with respect to $\dot x = f(x)$ iff
 	x(0) \in M \quad \Rightarrow \quad x(t) \in M, \qquad \forall t \geq 0
 \end{equation*}
 \subsubsection{Lasalle's Theorem}
-Lasalle's invariance principle can be used to show the asymptotic stability of an equilibrium point when $\dot V$ is negative semi-definite, $i.e \quad \dot V \leq 0$. $\dot V$ is semidefinite if $\dot V$ is not sticly 0 in origo.
-\\\\
-Let $\Omega \subset D$ be a compact set that is positively invariant with respect to $\dot x = f(x)$. Let $V\::\:D \rightarrow R$ be a continuously differentiable function such that $\dot V(x) \leq 0$ in $\Omega$. Let $E$ be the set of all points in $\Omega$ where $\dot V(x) = 0$. Let $M$ be the largest invariant set in E. Then every solution starting in $\Omega$ approaches $M$ as $t \rightarrow \infty$.
+Lasalle's invariance principle can be used to show the asymptotic stability of
+an equilibrium point when $\dot V$ is negative semi-definite, $i.e \quad \dot V
+	\leq 0$. $\dot V$ is semidefinite if $\dot V$ is not sticly 0 in origo. \\\\
+Let $\Omega \subset D$ be a compact set that is positively invariant with
+respect to $\dot x = f(x)$. Let $V\::\:D \rightarrow R$ be a continuously
+differentiable function such that $\dot V(x) \leq 0$ in $\Omega$. Let $E$ be
+the set of all points in $\Omega$ where $\dot V(x) = 0$. Let $M$ be the largest
+invariant set in E. Then every solution starting in $\Omega$ approaches $M$ as
+$t \rightarrow \infty$.
 \begin{figure}[h]
-    \centering
+	\centering
 	\def\svgwidth{0.5\columnwidth}
-    \input{figures/Lasalles.eps_tex}
+	\input{figures/Lasalles.eps_tex}
 \end{figure}
 \subsubsection{Barbashin Theorem}
 Let $x=0$ be an equilibrium point for \[\dot{x} = f(x)\]
-Let $V: D \rightarrow R$ be a continuously differentiable positive definite function on a domain $D$ containing the origin $x=0$, such that $\dot V(x) \leq 0$ in $D$. Let $S=\{x \in D\:|\:\dot V(x) = 0\}$ and suppose that no solution can stay identically in $S$, other than the trivial solution $x(t) \equiv 0$. Then, the origin is asymptotically stable.
-If a $A$ matrix i Hurwitz, we can conclude asymptotic stability.
+Let $V: D \rightarrow R$ be a continuously differentiable positive definite
+function on a domain $D$ containing the origin $x=0$, such that $\dot V(x) \leq
+	0$ in $D$. Let $S=\{x \in D\:|\:\dot V(x) = 0\}$ and suppose that no solution
+can stay identically in $S$, other than the trivial solution $x(t) \equiv 0$.
+Then, the origin is asymptotically stable. If a $A$ matrix i Hurwitz, we can
+conclude asymptotic stability.
 \subsubsection{Krasovskii Theorem}
 Let \(x = 0\) be an equilibrium point for the system\[\dot{x} = f(x)\]. Let \(V : \mathbb{R}^n \to \mathbb{R}\) be a continuously differentiable, radially unbounded, positive definite function such that \(V(x) \leq 0\) for all \(x \in \mathbb{R}^n\). Let \(S = \{x \in \mathbb{R}^n \,|\, V(x) = 0\}\) and suppose that no solution can stay identically in \(S\), other than the trivial solution \(x(t) = 0\). Then, the origin is globally asymptotically stable.
 \subsubsection{Dominating cross-terms}
@@ -313,14 +350,17 @@ Let \(x = 0\) be an equilibrium point for the nonlinear system
 \[
 	\dot{x} = f(x)
 \]
-where \(f : D \to \mathbb{R}^n\) is continuously differentiable and \(D\) is a neighborhood of the origin. Let
+where \(f : D \to \mathbb{R}^n\) is continuously differentiable and \(D\) is a
+neighborhood of the origin. Let
 \[
 	A = \frac{\partial f}{\partial x_i}\bigg|_{x=0}
 \]
 Then,
 \begin{enumerate}
-	\item The origin is asymptotically stable if \(\text{Re}(\lambda_i) < 0\) for all eigenvalues \(\lambda_i\) of \(A\).
-	\item The origin is unstable if \(\text{Re}(\lambda_i) > 0\) for one or more of the eigenvalues \(\lambda_i\) of \(A\).
+	\item The origin is asymptotically stable if \(\text{Re}(\lambda_i) < 0\) for all
+	      eigenvalues \(\lambda_i\) of \(A\).
+	\item The origin is unstable if \(\text{Re}(\lambda_i) > 0\) for one or more of the
+	      eigenvalues \(\lambda_i\) of \(A\).
 \end{enumerate}
 \subsection{Comparison Functions}
 \subsubsection{Class $\mathcal{K}$ and Class $\mathcal{K}_{\infty}$ Definitions}
@@ -348,90 +388,93 @@ Moreover $\beta(r,s) \rightarrow 0 \text{ as } s \rightarrow \infty$
 \subsubsection{Introducing class $\mathcal{K}$ functions in Lyapunov's stability theorem}
 Let $\alpha_1$ and $\alpha_2$ be class $\mathcal{K}$ functions on $[0, a), \alpha_3$ and $\alpha_4$ be class $\mathcal{K}_{\infty}$ functions, and $\beta$ be a class $\mathcal{K} \mathcal{L}$ function. Denote the inverse of $\alpha_i$ by $\alpha_i^{-1}$. Then,
 \begin{itemize}
-    \item $\alpha_1^{-1}$ is defined on $\left[0, \alpha_1(a)\right)$ and belongs to class $\mathcal{K}$.
-    \item $\alpha_3^{-1}$ is defined on $[0, \infty)$ and belongs to class $\mathcal{K}_{\infty}$.
-    \item $\alpha_1 \circ \alpha_2$ belongs to class $\mathcal{K}$.
-    \item $\alpha_3 \circ \alpha_4$ belongs to class $\mathcal{K}_{\infty}$.
-    \item $\sigma(r, s)=\alpha_1\left(\beta\left(\alpha_2(r), s\right)\right)$ belongs to class $\mathcal{K} \mathcal{L}$.
+	\item $\alpha_1^{-1}$ is defined on $\left[0, \alpha_1(a)\right)$ and belongs to class $\mathcal{K}$.
+	\item $\alpha_3^{-1}$ is defined on $[0, \infty)$ and belongs to class $\mathcal{K}_{\infty}$.
+	\item $\alpha_1 \circ \alpha_2$ belongs to class $\mathcal{K}$.
+	\item $\alpha_3 \circ \alpha_4$ belongs to class $\mathcal{K}_{\infty}$.
+	\item $\sigma(r, s)=\alpha_1\left(\beta\left(\alpha_2(r), s\right)\right)$ belongs to class $\mathcal{K} \mathcal{L}$.
 \end{itemize}
 Class $\mathcal{K}$ and class $\mathcal{K} \mathcal{L}$ functions enter into Lyapunov analysis through the next subsections
 \subsubsection{Lyapanovs analysis with Class $\mathcal{K}$ functions}
 Let $V: D \rightarrow R$ be a continuous positive definite function defined on a domain $D \subset R^n$ that contains the origin. Let $B_r \subset D$ for some $r>0$. Then, there exist class $\mathcal{K}$ functions $\alpha_1$ and $\alpha_2$, defined on $[0, r]$, such that
 \[
-\alpha_1(\|x\|) \leq V(x) \leq \alpha_2(\|x\|)
+	\alpha_1(\|x\|) \leq V(x) \leq \alpha_2(\|x\|)
 \]
-for all $x \in B_r$. If $D=R^n$, the functions $\alpha_1$ and $\alpha_2$ will be defined on $[0, \infty)$ and the foregoing inequality will hold for all $x \in R^n$. Moreover, if $V(x)$ is radially unbounded, then $\alpha_1$ and $\alpha_2$ can be chosen to belong to class $\mathcal{K}_{\infty}$.
+for all $x \in B_r$. If $D=R^n$, the functions $\alpha_1$ and $\alpha_2$ will
+be defined on $[0, \infty)$ and the foregoing inequality will hold for all $x
+	\in R^n$. Moreover, if $V(x)$ is radially unbounded, then $\alpha_1$ and
+$\alpha_2$ can be chosen to belong to class $\mathcal{K}_{\infty}$.
 \subsubsection{Lyapanovs analysis with Class $\mathcal{K} \mathcal{L}$ functions}
 Consider the scalar autonomous differential equation
 $$
-\dot{y}=-\alpha(y), \quad y\left(t_0\right)=y_0
+	\dot{y}=-\alpha(y), \quad y\left(t_0\right)=y_0
 $$
 where $\alpha$ is a locally Lipschitz class $\mathcal{K}$ function defined on $[0, a)$. For all $0 \leq y_0<a$, this equation has a unique solution $y(t)$ defined for all $t \geq t_0$. Moreover,
 $$
-y(t)=\sigma\left(y_0, t-t_0\right)
+	y(t)=\sigma\left(y_0, t-t_0\right)
 $$
 where $\sigma$ is a class $\mathcal{K} \mathcal{L}$ function defined on $[0, a) \times[0, \infty)$.
 \subsection{Nonautonomous Systems}
 Throughout this section we will consider the following Nonautonomous system
 \begin{equation*}
-    \dot x = f(t,x)
-    \label{Nonautonomous system}
+	\dot x = f(t,x)
+	\label{Nonautonomous system}
 \end{equation*}
 \subsubsection{Stability definitions}
 The equilibrium point $x=0$ of \ref{Nonautonomous system} is
 \begin{itemize}
-    \item stable if, for each $\varepsilon>0$, there is $\delta=\delta\left(\varepsilon, t_0\right)>0$ such that
-$$
-\left\|x\left(t_0\right)\right\|<\delta \Rightarrow\|x(t)\|<\varepsilon, \quad \forall t \geq t_0 \geq 0
-$$
-    \item uniformly stable if, for each $\varepsilon>0$, there is $\delta=\delta(\varepsilon)>0$, independent of $t_0$, such that (4.16) is satisfied.
-    \item unstable if it is not stable.
-    \item asymptotically stable if it is stable and there is a positive constant $c=c\left(t_0\right)$ such that $x(t) \rightarrow 0$ as $t \rightarrow \infty$, for all $\left\|x\left(t_0\right)\right\|<c$.
-	\item Asymptotically stable (AS) if
-	\subitem it is stable
-	\subitem there exists $c>0$ s.t. for all $t_0 \geq 0$ and $\eta>0$, there exists $T\left(t_0, \eta\right)>0$ satisfying
-	$$
-	\left\|x\left(t_0\right)\right\| \leq c \Longrightarrow\|x(t)\| \leq \eta \quad \forall t \geq t_0+T\left(t_0, \eta\right)
-	$$
-	\item Uniformly asymptotically stable (UAS) if
-	\subitem it is uniformly stable (US)
-	\subitem there exists $c>0$ s.t. for all $t_0 \geq 0$ and $\eta>0$, there exists $T(\eta)>0$ satisfying
-	$$
-	\left\|x\left(t_0\right)\right\| \leq c \Longrightarrow\|x(t)\| \leq \eta \quad \forall t \geq t_0+T(\eta)
-	$$
-	
-	\item Globally uniformly asymptotically stable (GUAS) if
-	\subitem it is globally uniformly stable (GUS)
-	\subitem for all $\eta, c>0$ and $t_0 \geq 0$ there exists $T(\eta, c)>0$ s.t.
-	$$
-	\left\|x\left(t_0\right)\right\| \leq c \Longrightarrow\|x(t)\| \leq \eta \quad \forall t \geq t_0+T(\eta, c)
-	$$
+	\item stable if, for each $\varepsilon>0$, there is $\delta=\delta\left(\varepsilon,
+		      t_0\right)>0$ such that $$ \left\|x\left(t_0\right)\right\|<\delta
+		      \Rightarrow\|x(t)\|<\varepsilon, \quad \forall t \geq t_0 \geq 0 $$
+	\item uniformly stable if, for each $\varepsilon>0$, there is
+	      $\delta=\delta(\varepsilon)>0$, independent of $t_0$, such that (4.16) is
+	      satisfied.
+	\item unstable if it is not stable.
+	\item asymptotically stable if it is stable and there is a positive constant
+	      $c=c\left(t_0\right)$ such that $x(t) \rightarrow 0$ as $t \rightarrow \infty$,
+	      for all $\left\|x\left(t_0\right)\right\|<c$.
+	\item Asymptotically stable (AS) if \subitem it is stable \subitem there exists $c>0$
+	      s.t. for all $t_0 \geq 0$ and $\eta>0$, there exists $T\left(t_0,
+		      \eta\right)>0$ satisfying $$ \left\|x\left(t_0\right)\right\| \leq c
+		      \Longrightarrow\|x(t)\| \leq \eta \quad \forall t \geq t_0+T\left(t_0,
+		      \eta\right) $$
+	\item Uniformly asymptotically stable (UAS) if \subitem it is uniformly stable (US)
+	      \subitem there exists $c>0$ s.t. for all $t_0 \geq 0$ and $\eta>0$, there
+	      exists $T(\eta)>0$ satisfying $$ \left\|x\left(t_0\right)\right\| \leq c
+		      \Longrightarrow\|x(t)\| \leq \eta \quad \forall t \geq t_0+T(\eta) $$
+
+	\item Globally uniformly asymptotically stable (GUAS) if \subitem it is globally
+	      uniformly stable (GUS) \subitem for all $\eta, c>0$ and $t_0 \geq 0$ there
+	      exists $T(\eta, c)>0$ s.t. $$ \left\|x\left(t_0\right)\right\| \leq c
+		      \Longrightarrow\|x(t)\| \leq \eta \quad \forall t \geq t_0+T(\eta, c) $$
 \end{itemize}
 \subsubsection{Equlibirum Points}
 $x^* \in \mathbb{R}^n$ is an equilibrium point of $\dot x = f(t,x)$ if $f(t,x^*) = 0$ for all $t \geq 0$.
 \begin{frm-ex}[Example of equilibrium point]
-	\item $\dot x = -\frac{a(t)x}{1+x^2}$ has the equilibrium point $x^* = 0$. We can see this by evaluating $f(t,x^*)$
-	\item $\dot x = -\frac{a(t)}{1+x^2}+b(t)$ where $b(t) \neq 0 \; \forall t$ has no equilibrium points
+\item $\dot x = -\frac{a(t)x}{1+x^2}$ has the equilibrium point $x^* = 0$. We can see this by evaluating $f(t,x^*)$
+\item $\dot x = -\frac{a(t)}{1+x^2}+b(t)$ where $b(t) \neq 0 \; \forall t$ has no equilibrium points
 \end{frm-ex}
 \subsubsection{Stability definitions with $\mathcal{K}$ and $\mathcal{KL}$ classes}
 For $\dot x = f(t,x)$, the equilibrium point $x^* = 0$ is
 \begin{itemize}
-	\item Uniformly stable (US) if $\exists \alpha \in \mathcal{K}, \exists c > 0$ such theoremseparator
-			\begin{equation*}
-				\| x(t) \| \leq \alpha(\|x(t_0\|)) \quad \forall t \geq t_0, \quad \|x(t_0)\| \leq c, \quad \forall t_0 \geq 0
-			\end{equation*}
-	\item globally uniformly stable (GUS) if $\exists \alpha \in \mathcal{K}_{\infty}$ such that
-	\begin{equation*}
-		\| x(t) \| \leq \alpha(\|x(t_0\|)) \quad \forall t \geq t_0, \quad \forall t_0 \geq 0
-	\end{equation*}
+	\item Uniformly stable (US) if $\exists \alpha \in \mathcal{K}, \exists c > 0$ such
+	      theoremseparator
+	      \begin{equation*}
+		      \| x(t) \| \leq \alpha(\|x(t_0\|)) \quad \forall t \geq t_0, \quad \|x(t_0)\| \leq c, \quad \forall t_0 \geq 0
+	      \end{equation*}
+	\item globally uniformly stable (GUS) if $\exists \alpha \in \mathcal{K}_{\infty}$
+	      such that
+	      \begin{equation*}
+		      \| x(t) \| \leq \alpha(\|x(t_0\|)) \quad \forall t \geq t_0, \quad \forall t_0 \geq 0
+	      \end{equation*}
 	\item exponentially stable if $\exists c,k, \lambda > 0$
-	\begin{equation*}
-		\|x(t)\| \leq k \|x(t_0)\|e^{-\lambda(t-t_0)} \qquad t \geq t_0 \geq 0, qquad \|x(t_0)\| < c
-	\end{equation*}
+	      \begin{equation*}
+		      \|x(t)\| \leq k \|x(t_0)\|e^{-\lambda(t-t_0)} \qquad t \geq t_0 \geq 0, qquad \|x(t_0)\| < c
+	      \end{equation*}
 	\item globally exponentially stable if $\exists k, \lambda > 0$
-	\begin{equation*}
-		\|x(t)\| \leq k \|x(t_0)\|e^{-\lambda(t-t_0)} \qquad t \geq t_0 \geq 0, qquad \forall x(t_0)
-	\end{equation*}
+	      \begin{equation*}
+		      \|x(t)\| \leq k \|x(t_0)\|e^{-\lambda(t-t_0)} \qquad t \geq t_0 \geq 0, qquad \forall x(t_0)
+	      \end{equation*}
 \end{itemize}
 \subsubsection{Time-varying Lyapunov function candidates}
 $V(t,x)$ is positive definite if
@@ -457,19 +500,49 @@ $V(t,x)$ is decresent if
 \end{equation*}
 \begin{figure}[h]
 	\centering
-	\def\svgwidth{0.5\columnwidth}
-    \input{figures/Lyapunov_function.eps_tex}
+	\input{figures/Lyapunov_functions.eps_tex}
 \end{figure}
 \subsubsection{Lyapunov theorem: Uniformal Stability}
-If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow \mathbbR$ and $W_i: \mathbb{D} \rightarrow \mathbb{R}$ continuous positive definite such that
+If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow
+	\mathbbR$ and $W_i: \mathbb{D} \rightarrow \mathbb{R}$ continuous positive
+definite such that
 \begin{enumerate}[i)]
 	\item $V \text{ is } C^1$
 	\item $W_1(x) \leq V(t,x) \leq W_2(x) \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
 	\item $\dot V(t,x) \leq 0 \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
 \end{enumerate}
 then $x=0$ is uniformly stable.
+\begin{figure}[h]
+	\centering
+	\resizebox{0.45\textwidth}{!}{\input{figures/Lyapunov_analysis.pdf_tex}}
+\end{figure}
+\begin{frm-prf}
+	The derivative of $V$ along the trajectories of (4.15) is given by
+	$$
+		\dot{V}(t, x)=\frac{\partial V}{\partial t}+\frac{\partial V}{\partial x} f(t, x) \leq 0
+	$$
+	Choose $r>0$ and $c>0$ such that $B_r \subset D$ and $c<\min _{\|x\|=r}
+		W_1(x)$. Then, $\left\{x \in B_r \mid W_1(x) \leq c\right\}$ is in the interior
+	of $B_r$. Define a time-dependent set $\Omega_{t, c}$ by $$ \Omega_{t,
+			c}=\left\{x \in B_r \mid V(t, x) \leq c\right\} $$
+
+	The set $\Omega_{t, c}$ contains $\left\{x \in B_r \mid W_2(x) \leq c\right\}$
+	since $$ W_2(x) \leq c \Rightarrow V(t, x) \leq c $$
+
+	On the other hand, $\Omega_{t, c}$ is a subset of $\left\{x \in B_r \mid W_1(x)
+		\leq c\right\}$ since $$ V(t, x) \leq c \Rightarrow W_1(x) \leq c $$
+
+	Thus, $$ \left\{x \in B_r \mid W_2(x) \leq c\right\} \subset \Omega_{t, c}
+		\subset\left\{x \in B_r \mid W_1(x) \leq c\right\} \subset B_r \subset D $$ for
+	all $t \geq 0$. These five nested sets are sketched in Figure 4.7. The setup of
+	Figure 4.7 is similar to that of Figure 4.1, except that the surface $V(t,
+		x)=c$ is now dependent on $t$, and that is why it is surrounded by the
+	time-independent surfaces $W_1(x)=c$ and $W_2(x)=c$.
+\end{frm-prf}
 \subsubsection{Lyapunov theorem: Asymptotical Stability}
-If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow \mathbbR$ and $W_i: \mathbb{D} \rightarrow \mathbb{R}$ continuous positive definite such that
+If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow
+	\mathbbR$ and $W_i: \mathbb{D} \rightarrow \mathbb{R}$ continuous positive
+definite such that
 \begin{enumerate}[i)]
 	\item $V \text{ is } C^1$
 	\item $W_1(x) \leq V(t,x) \leq W_2(x) \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
@@ -477,7 +550,9 @@ If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow \math
 \end{enumerate}
 then $x=0$ is asymptotically stable.
 \subsubsection{Lyapunov theorem: Global Uniformly Asymptotical Stability}
-If there exitst a function $V(t,x):[0, \infty) \times \mathbb{R}^2 \rightarrow \mathbbR$ and $W_i: \mathbb{R}^2 \rightarrow \mathbb{R}$ continuous positive definite such that
+If there exitst a function $V(t,x):[0, \infty) \times \mathbb{R}^2 \rightarrow
+	\mathbbR$ and $W_i: \mathbb{R}^2 \rightarrow \mathbb{R}$ continuous positive
+definite such that
 \begin{enumerate}[i)]
 	\item $V \text{ is } C^1$
 	\item $W_1(x) \leq V(t,x) \leq W_2(x) \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
@@ -486,7 +561,8 @@ If there exitst a function $V(t,x):[0, \infty) \times \mathbb{R}^2 \rightarrow \
 \end{enumerate}
 then $x=0$ is globally asymptotically stable.
 \subsubsection{Lyapunov theorem: Exponential Stability}
-If there exist a function $V(t,x):[0, \infty) \times \mathbb{D} \rightarrow \mathbbR$ and constants $a, k_1, k_2, k_3 > 0$ such that
+If there exist a function $V(t,x):[0, \infty) \times \mathbb{D} \rightarrow
+	\mathbbR$ and constants $a, k_1, k_2, k_3 > 0$ such that
 \begin{enumerate}[i)]
 	\item $V \text{ is } C^1$
 	\item $k_1 \|x\|^a \leq V(t,x) \leq k_2 \|x\|^a \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
@@ -494,12 +570,16 @@ If there exist a function $V(t,x):[0, \infty) \times \mathbb{D} \rightarrow \mat
 \end{enumerate}
 then $x=0$ is exponentially stable.
 \subsubsection{Barbalat's Lemma}
-If there exist functions $V:[0, \infty) \times \mathbb{R}^n \rightarrow \mathbb{R}^n, W_i: \mathbb{R}^n \rightarrow \mathbb{R}$ continuous positive definite and radially unbounded and $W: \mathbb{R}^n \rightarrow \mathbb{R}^n C^1$ and positive semidefinite satisfying
+If there exist functions $V:[0, \infty) \times \mathbb{R}^n \rightarrow
+	\mathbb{R}^n, W_i: \mathbb{R}^n \rightarrow \mathbb{R}$ continuous positive
+definite and radially unbounded and $W: \mathbb{R}^n \rightarrow \mathbb{R}^n
+	C^1$ and positive semidefinite satisfying
 \begin{enumerate}[i)]
 	\item $V$ is $C^1$
 	\item $W_1(x) \leq V(t, x) \leq W_2(x) \quad \forall(t, x) \in[0, \infty) \times \mathbb{R}^n$
 	\item $\dot{V}(t, x) \leq-W(x) \quad \forall(t, x) \in[0, \infty) \times \mathbb{R}^n$
-	\item for every $k>0$ there exists $c>0$ s.t. $\|x\| \leq k \Longrightarrow|\dot{W}(t, x)| \leq c$ for all $t \geq 0$
+	\item for every $k>0$ there exists $c>0$ s.t. $\|x\| \leq k
+		      \Longrightarrow|\dot{W}(t, x)| \leq c$ for all $t \geq 0$
 \end{enumerate}
 then the origin is globally uniformly stable and all solutions approach $E=\left\{x \in \mathbb{R}^n: W(x)=0\right\}$.
 \subsubsection{LaSalles-Yokishawa Theorem}
@@ -510,7 +590,8 @@ If there exist functions $V:[0, \infty) \times \mathbb{D} \rightarrow \mathbb{R}
 	\item $V$ is $C^1$
 	\item $W_1(x) \leq V(t, x) \leq W_2(x) \quad \forall(t, x) \in[0, \infty) \times \mathbb{D}$
 	\item $\dot{V}(t, x) \leq-W(x) \quad \forall(t, x) \in[0, \infty) \times \mathbb{D}$
-	\item for every $k>0$ there exists $r>0$ s.t. $\|x\| \leq k \Longrightarrow\|f(t, x)\| \leq r$ for all $t \geq 0$ 
+	\item for every $k>0$ there exists $r>0$ s.t. $\|x\| \leq k \Longrightarrow\|f(t,
+		      x)\| \leq r$ for all $t \geq 0$
 \end{enumerate}
 then the origin is uniformly stable, and $\exists c>0$ such that all solutions with $\left\|x\left(t_0\right)\right\|<c$ approach $E=\{x \in \mathbb{D}: W(x)=0\}$
 \subsubsection{Global LaSalles-Yokishawa Theorem}
@@ -521,7 +602,8 @@ If there exist functions $V:[0, \infty) \times \mathbb{R}^n \rightarrow \mathbb{
 	\item $V$ is $C^1$
 	\item $W_1(x) \leq V(t, x) \leq W_2(x) \quad \forall(t, x) \in[0, \infty) \times \mathbb{R}^n$
 	\item $\dot{V}(t, x) \leq-W(x) \quad \forall(t, x) \in[0, \infty) \times \mathbb{R}^n$
-	\item for every $k>0$ there exists $r>0$ s.t. $\|x\| \leq k \Longrightarrow\|f(t, x)\| \leq r$ for all $t \geq 0$
+	\item for every $k>0$ there exists $r>0$ s.t. $\|x\| \leq k \Longrightarrow\|f(t,
+		      x)\| \leq r$ for all $t \geq 0$
 \end{enumerate}
 then the origin is globally uniformly stable and all solutions approach $E=\left\{x \in \mathbb{R}^n: W(x)=0\right\}$
 \end{document}
