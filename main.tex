@@ -539,7 +539,7 @@ Figure 4.7 is similar to that of Figure 4.1, except that the surface $V(t,
 	x)=c$ is now dependent on $t$, and that is why it is surrounded by the
 time-independent surfaces $W_1(x)=c$ and $W_2(x)=c$.
 \end{frm-prf}
-\subsubsection{Lyapunov theorem: Asymptotical Stability}
+\subsubsection{Lyapunov theorem: Uniformal Asymptotical Stability}
 If there exitst a function $V(t,x):[0, \infty) \times \mathbbD \rightarrow
 	\mathbbR$ and $W_i: \mathbb{D} \rightarrow \mathbb{R}$ continuous positive
 definite such that
@@ -548,7 +548,7 @@ definite such that
 	\item $W_1(x) \leq V(t,x) \leq W_2(x) \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
 	\item $\dot V(t,x) \leq -W_3(x) \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
 \end{enumerate}
-then $x=0$ is asymptotically stable.
+then $x=0$ is uniformly asymptotically stable.
 \subsubsection{Lyapunov theorem: Global Uniformly Asymptotical Stability}
 If there exitst a function $V(t,x):[0, \infty) \times \mathbb{R}^2 \rightarrow
 	\mathbbR$ and $W_i: \mathbb{R}^2 \rightarrow \mathbb{R}$ continuous positive
@@ -559,7 +559,7 @@ definite such that
 	\item $\dot V(t,x) \leq -W_3(x) \qquad \forall (t,x) \in [0, \infty) \times \mathbb{D}$
 	\item $W_1$ is radially unbounded
 \end{enumerate}
-then $x=0$ is globally asymptotically stable.
+then $x=0$ is globally uniformly asymptotically stable.
 \subsubsection{Lyapunov theorem: Exponential Stability}
 If there exist a function $V(t,x):[0, \infty) \times \mathbb{D} \rightarrow
 	\mathbbR$ and constants $a, k_1, k_2, k_3 > 0$ such that
@@ -607,9 +607,25 @@ If there exist functions $V:[0, \infty) \times \mathbb{R}^n \rightarrow \mathbb{
 \end{enumerate}
 then the origin is globally uniformly stable and all solutions approach $E=\left\{x \in \mathbb{R}^n: W(x)=0\right\}$.
 
+\subsubsection{Converse Theorems: Exponential Stability}
+Let $x=0$ be an equilibrium point for the nonlinear system
+\begin{equation*}
+	\dot x = f(t,x)
+\end{equation*}
+where $d : [0, infty) \times D \to \mathcal{R}^{n}$ is continuously differentiable, $D = \{x \in  \mathbb{R}^n | \left\| x \right\|_2 < r\}$, and the Jacobian matrix $[\partial f / \partial x]$ is bounded and Lipschitz on $D$, uniformly in t.\\
+Let
+\begin{equation*}
+	A(t) = \frac{\partial f}{\partial x}(t,x)|_{x=0}
+\end{equation*}
+Then, $x=0$ is an exponentially stable equilibrium point for the nonlinear system if and only if it is an exponentially stable equilibrium point for the linear system
+\begin{equation*}
+	\dot x = A(t) x
+\end{equation*}
+
+
 \section{Input-To-State Stability}
 
-\subsubsection{Defenition}
+\subsection{Defenition}
 Consider:
 \begin{equation}
     \Sigma : \dot x = f(t, x, u)
@@ -618,11 +634,10 @@ The system $\Sigma$ is ISS if $\exists\beta \in \mathcal{K} \mathcal{L}$ and $\e
 \begin{equation}
     ||x(t)||\leq\beta||x_0||,t-t_0)+\gamma(sup||u(\tau)||)
 \end{equation}
-\subsubsection{Practice}
-
+\subsection{Practice}
 If a system is ISS stable, then:
 \begin{enumerate}[i)]
-    \item for u=0, the origin is GAS
+    \item for u=0, the origin is GUAS (0-GUAS)
     \item for a bounded input t $\mapsto$ u(t), every solution t $\mapsto$ x(t) is bounded.
 \end{enumerate}
 If one of these is not satisfied, the system is \textbf{not} ISS.
