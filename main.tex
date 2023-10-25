@@ -606,4 +606,25 @@ If there exist functions $V:[0, \infty) \times \mathbb{R}^n \rightarrow \mathbb{
 		      x)\| \leq r$ for all $t \geq 0$
 \end{enumerate}
 then the origin is globally uniformly stable and all solutions approach $E=\left\{x \in \mathbb{R}^n: W(x)=0\right\}$.
+
+\section{Input-To-State Stability}
+
+\subsubsection{Defenition}
+Consider:
+\begin{equation}
+    \Sigma : \dot x = f(t, x, u)
+\end{equation}
+The system $\Sigma$ is ISS if $\exists\beta \in \mathcal{K} \mathcal{L}$ and $\exists\gamma \in \mathcal{K}$ such that for any $t_0 \geq 0$, any $x_0 = x(t_0) \in \mathbb{R}^n$ and any bounded input $t \mapsto u(t)$, the solution $t\mapsto x(t)$ exists $\forall t \geq t_0$ and satisfies
+\begin{equation}
+    ||x(t)||\leq\beta||x_0||,t-t_0)+\gamma(sup||u(\tau)||)
+\end{equation}
+\subsubsection{Practice}
+
+If a system is ISS stable, then:
+\begin{enumerate}[i)]
+    \item for u=0, the origin is GAS
+    \item for a bounded input t $\mapsto$ u(t), every solution t $\mapsto$ x(t) is bounded.
+\end{enumerate}
+If one of these is not satisfied, the system is \textbf{not} ISS.
+
 \end{document}
