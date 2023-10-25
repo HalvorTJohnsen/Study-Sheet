@@ -626,11 +626,9 @@ Then, $x=0$ is an exponentially stable equilibrium point for the nonlinear syste
 \begin{equation*}
 	\dot x = A(t) x
 \end{equation*}
-
-
+If $A(t)$ varies with time, we must use a Lyapunov analysis to conclude exponentially stability.
 \section{Input-To-State Stability}
-
-\subsection{Defenition}
+\subsection{Definition}
 Consider:
 \begin{equation}
     \Sigma : \dot x = f(t, x, u)
@@ -646,11 +644,4 @@ If a system is ISS stable, then:
     \item for a bounded input t $\mapsto$ u(t), every solution t $\mapsto$ x(t) is bounded.
 \end{enumerate}
 If one of these is not satisfied, the system is \textbf{not} ISS.
-
-\section*{How to check ISS}
-\begin{enumerate}[i)]
-	\item V is C'
-	$\exists \alpha_1, \alpha_2 \in \mathcal{K}_\inf st$
-\end{enumerate}
-
 \end{document}
