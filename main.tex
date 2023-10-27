@@ -706,6 +706,28 @@ If a system is ISS stable, then:
 	\item for a bounded input t $\mapsto$ u(t), every solution t $\mapsto$ x(t) is bounded.
 \end{enumerate}
 If one of these is not satisfied, the system is \textbf{not} ISS.
+\subsection{ISS (T 4.19)}
+Let $V:[0, \infty) \times R^n \rightarrow R$ be a continuously differentiable function such that
+$$
+\begin{aligned}
+\alpha_1(\|x\|) & \leq V(t, x) \leq \alpha_2(\|x\|) \\
+\frac{\partial V}{\partial t}+\frac{\partial V}{\partial x} f(t, x, u) & \leq-W_3(x), \quad \forall\|x\| \geq \rho(\|u\|)>0
+\end{aligned}
+$$
+$\forall(t, x, u) \in[0, \infty) \times R^n \times R^m$, where $\alpha_1, \alpha_2$ are class $\mathcal{K}_{\infty}$ functions, $\rho$ is a class $\mathcal{K}$ function, and $W_3(x)$ is a continuous positive definite function on $R^n$. Then, the system (4.44) is input-to-state stable with $\gamma=\alpha_1^{-1} \circ \alpha_2 \circ \rho$.
+\subsection{ISS (L 4.6)}
+Suppose $f(t, x, u)$ is continuously differentiable and globally Lipschitz in $(x, u)$, uniformly in $t$. If the unforced system (4.45) has a globally exponentially stable equilibrium point at the origin $x=0$, then the system (4.44) is input-to-state stable.
+\subsection{ISS with cascade and $x_2$ as input}
+Under the stated assumptions, if the system 
+\begin{equation}
+	\dot{x}_1=f_1(t, x_1, x_2)
+	\label{eqn: cascade1}
+\end{equation}
+\begin{equation}
+	\dot{x}_2=f_2(t, x_2)
+	\label{eqn: cascade2}
+	\end{equation}
+with $x_2$ as input, is input-to-state stable and the origin of (\ref{eqn: cascade2}) is globally uniformly asymptotically stable, then the origin of the cascade system (\ref{eqn: cascade1}) and (\ref{eqn: cascade2}) is globally uniformly asymptotically stable.
 \begin{frm-ex}[Example of ISS]
 The system is given by
 $$
@@ -778,7 +800,54 @@ $$
 		        & \leq-(1-\theta) x_1^2 \quad \forall\left|x_1\right| \geq \frac{x_2^2}{\theta}
 	\end{aligned}
 $$
-where $0<\theta<1$. Since $\rho(r)=\frac{r^2}{\theta}$ is a class $\mathcal{K}$ function, by Theorem 4.19 the system (5) is ISS with $x_2$ as input. Hence by Lemma 4.7, the origin of the cascade system (5)-(6) is gloally asymptotically stable.
+where $0<\theta<1$. Since $\gamma(r)=\frac{r^2}{\theta}$ is a class $\mathcal{K}$ function, by Theorem 4.19 the system (5) is ISS with $x_2$ as input. Hence by Lemma 4.7, the origin of the cascade system (5)-(6) is gloally asymptotically stable.
 (Note: While it is tempting to use Lemma 4.6 to conclude that the system (5) is ISS, the function $f\left(t, x_1, x_2\right)=-x_1+x_2^2$ is not globally Lipschitz in $x_2$, and the lemma cannot be applied.)
+\end{frm-ex}
+\section{Input-Output Stability}
+In input-output stability we can only measure the input and output of the system. We cannot measure the state of the system. This is useful when we want to control a system, but we cannot measure the state of the system. We can then use input-output stability to prove that the system is stable. I.e. the system is viewed as a black box that can be accessed only through its input and output terminals.
+\subsection{$\mathcal{L}$ stability}
+We consider the input-output relation
+\begin{equation}
+	y = H u
+	\label{eqn: i-o-relation}
+\end{equation}
+where $H$ is some mapping. $u$ belongs to a space of signals that map the time interval $[0, \infty )$ int the Eucledian space $\mathbb{R}^m$. The norm $\left\| u \right\| $ have to satisfies the same properties as introduced earlier in this text.
+\\\\
+\begin{itemize}
+	\item For the space of piecewise continuous signals, bounded functions:
+	\begin{equation}
+		\left\| u \right\| _{\mathcal{L}_\infty } = \sup_{t \geq 0} \left\| u(t) \right\| < \infty \quad \Rightarrow  \quad \mathcal{L}^m_\infty
+	\end{equation}
+	\item For the space of piecewise continuous signals, square integrable functions:
+	\begin{equation}
+		\left\| u \right\|_{\mathcal{L}_2} = \sqrt{\int_{0}^{\infty} u^T(t) u(t) dt} < \infty \quad \Rightarrow  \quad \mathcal{L}^m_2
+	\end{equation}
+	More generally, for the space of piecewise continuous signals, $p$-integrable functions:
+	\begin{equation}
+		\left\| u \right\|_{\mathcal{L}_p} = \left( \int_{0}^{\infty} \left\| u(t) \right\|^p dt \right)^{\frac{1}{p}} < \infty \quad \Rightarrow  \quad \mathcal{L}^m_p
+	\end{equation}
+\end{itemize}
+where \textbf{m} is the dimension of $u$, and \textbf{q} is the dimension of $y$. 
+\\\\
+\textbf{If we think of $u \in  \mathcal{L}^m$ as a "well behaved" system, the question to ask is whether the putput $y \in \mathcal{L}^q$ is also "well behaved".}
+\\\\
+We cannot define $H$ as a mapping from $\mathcal{L}^m$ to $\mathcal{L}^q$, because we have to deal with systems which are unstable. $H$ is therefore usually defined as a mapping from an \textbf{extended space} $\mathcal{L}_e^m$ to an \textbf{extended space} $\mathcal{L}_e^q$ where $\mathcal{L}_e^m$
+\begin{equation}
+	\mathcal{L}_e^m =\{u | u_\tau \in \mathcal{L}^{m}, \forall \tau \in [0, \infty )\}
+\end{equation}
+and $u_\tau$ is defined by
+\begin{equation}
+	u_\tau (t) = \begin{cases}
+		u(t) & \text{if } t \geq \tau \\
+		0 & \text{if } t < \tau
+	\end{cases}
+\end{equation}
+\begin{frm-ex}[Example of extended space]
+	\begin{equation*}
+		\begin{array}{lllll}
+			u(t)=\sin \omega t & \Rightarrow & u \in L_{2 e} & \text { but } & u \notin L_2 \\
+			y(t)=t & \Rightarrow & y \in L_{\inftye} & \text { but } & y \notin L_{\infty}
+		\end{array}
+	\end{equation*}
 \end{frm-ex}
 \end{document}
