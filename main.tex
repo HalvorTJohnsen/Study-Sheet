@@ -55,6 +55,60 @@
 
 \begin{document}
 %\begin{multicols*}{2}
+\section{Important Definitions}
+\subsection{Norm}
+The norm $|x|$ of a vector $x$ is a real valued function with the following properties:
+\begin{enumerate}[label=(\roman*)]
+	\item $|x| \geq 0$ with $|x|=0$ if and only if $x=0$
+	\item $|\alpha x|=|\alpha| x \mid$ for any scalar $\alpha$
+	\item $|x+y| \leq|x|+|y|$ (triangle inequality)
+\end{enumerate}
+The norm $|x|$ of a vector $x$ can be thought of as the size or length of the vector $x$. Similarly, $|x-y|$ can be thought of as the distance between the vectors $x$ and $y$.
+\subsection{Induced Norm}
+Let $|\cdot|$ be a given vector norm. Then for each matrix $A \in \mathcal{R}^{m \times n}$, the quantity $\|A\|$ defined by
+\(
+\|A\| \triangleq \sup _{\substack{x \neq 0 \\ x \in \mathcal{R}^n}} \frac{|A x|}{|x|}=\sup _{|x| \leq 1}|A x|=\sup _{|x|=1}|A x|
+\)
+is called the induced (matrix) norm of $A$ corresponding to the vector norm $|\cdot|$.
+\\\\
+Some of the properties of the induced norm that we will often use in this book are summarized as follows:
+\begin{enumerate}[label=(\roman*)]
+	\item $|A x| \leq\|A\||x|, \quad \forall x \in \mathcal{R}^n$
+	\item $\|A+B\| \leq\|A\|+\|B\|$
+	\item $\|A B\| \leq\|A\|\|B\|$
+\end{enumerate}
+\subsection{$\mathcal{L}_p$ spaces}
+for functions fo time, we define the $\mathcal{L}_p$ norm
+\begin{equation*}
+	\|x\|_p \triangleq\left(\int_0^{\infty}|x(\tau)|^p d \tau\right)^{1 / p}
+\end{equation*}
+for $p \in[1, \infty)$ and say that $x \in \mathcal{L}_p$ when $\|x\|_p$ exists (i.e., when $\|x\|_p$ is finite). The $\mathcal{L}_{\infty}$ norm is defined as
+$$
+	\|x\|_{\infty} \triangleq \sup _{t \geq 0}|x(t)|
+$$
+and we say that $x \in \mathcal{L}_{\infty}$ when $\|x\|_{\infty}$ exists.
+In the above $\mathcal{L}_p, \mathcal{L}_{\infty}$ norm definitions, $x(t)$ can be a scalar or a vector function. If $x$ is a scalar function, then $|\cdot|$ denotes the absolute value. If $x$ is a vector function in $\mathcal{R}^n$ then $|\cdot|$ denotes any norm in $\mathcal{R}^n$.
+\begin{frm-ex}[$\mathcal{L}_p$ spaces]
+Consider the function $f(t)=\frac{1}{1+t}$. Then,
+$$
+	\begin{gathered}
+		\|f\|_{\infty}=\sup _{t \geq 0}\left|\frac{1}{1+t}\right|=1, \quad\|f\|_2=1
+	\end{gathered}
+$$
+Hence, $f \in \mathcal{L}_2 \bigcap \mathcal{L}_{\infty}$ but $f \notin \mathcal{L}_1 ; f$, however, belongs to $\mathcal{L}_{1 e}$, i.e., for any finite $t \geq 0$, we have
+$$
+	\int_0^t \frac{1}{1+\tau} d \tau=\ln (1+t)<\infty
+$$
+\end{frm-ex}
+\begin{itemize}
+	\item A function $f$ belongs to $\mathcal{L}_1$ if the integral of the absolute value of $f$ over its entire domain is finite. Mathematically, this can be expressed as:
+	      \[ \int |f(x)| \, dx < \infty \]
+	      In $\mathcal{L}_1$, functions are required to have a finite "$\mathcal{L}_1$  norm."
+	\item  A function $f$ belongs to $\mathcal{L}_2$ if the square of the absolute value of $f$ is Lebesgue integrable, meaning:
+	      \[ \int |f(x)|^2 \, dx < \infty \]
+	      In $\mathcal{L}_2$, functions are required to have a finite "L norm."
+	\item A function $f$ belongs to $\mathcal{L}_\infty$ if it is bounded, meaning there exists a constant $M$ such that $|f(x)| \leq M$ for all $x$. In $\mathcal{L}_\infty$, functions are required to have a finite "norm," which is essentially the supremum (maximum) of the absolute value of the function.
+\end{itemize}
 \section{Fundamental Properties}
 \subsection{Existence and Uniqueness}
 \subsubsection{Local Existence and Uniqueness}
@@ -282,7 +336,7 @@ $t \rightarrow \infty$.
 Let $x=0$ be an equilibrium point for \[\dot{x} = f(x)\]
 Let $V: D \rightarrow R$ be a continuously differentiable positive definite
 function on a domain $D$ containing the origin $x=0$, such that $\dot V(x) \leq
-0$ in $D$. Let $S=\{x \in D\:|\:\dot V(x) = 0\}$ and suppose that no solution
+	0$ in $D$. Let $S=\{x \in D\:|\:\dot V(x) = 0\}$ and suppose that no solution
 can stay identically in $S$, other than the trivial solution $x(t) \equiv 0$.
 Then, the origin is asymptotically stable. If a $A$ matrix i Hurwitz, we can
 conclude asymptotic stability.
@@ -611,8 +665,15 @@ If there exist functions $V:[0, \infty) \times \mathbb{R}^n \rightarrow \mathbb{
 		      x)\| \leq r$ for all $t \geq 0$
 \end{enumerate}
 then the origin is globally uniformly stable and all solutions approach $E=\left\{x \in \mathbb{R}^n: W(x)=0\right\}$.
-
-\subsubsection{Theorem 4.15: Converse Theorems: Exponential Stability}
+\subsection{Linear Time-Varying Systems and Linearization}
+\subsubsection{Global uniform asymptotic stability (T 4.11)}
+The equilibrium point $x=0$ of $\dot x(t) = A(t) x$ is (globally) asymptotically stable if and only if the state transition matrix satisfies the inequality
+\begin{equation*}
+	\left\| \Phi(t,t_0) \right\| \leq k e^{- \lambda (t-t_0)}, \quad \forall t \geq t_0 \geq 0
+\end{equation*}
+for some positive constant $k$ and $\lambda$.
+\subsection{Converse Theorems}
+\subsubsection{Exponential Stability (T 4.15)}
 Let $x=0$ be an equilibrium point for the nonlinear system
 \begin{equation*}
 	\dot x = f(t,x)
@@ -626,22 +687,98 @@ Then, $x=0$ is an exponentially stable equilibrium point for the nonlinear syste
 \begin{equation*}
 	\dot x = A(t) x
 \end{equation*}
-If $A(t)$ varies with time, we must use a Lyapunov analysis to conclude exponentially stability.
+Note that, for linear time-varying systems, uniform asymptotic stability cannot be characterized by the location of the eigenvalue of the matrix $A(t)$. I.e.if $A(t)$ varies with time, we must use a Lyapunov analysis to conclude exponentially stability.
 \section{Input-To-State Stability}
+
 \subsection{Definition}
 Consider:
 \begin{equation}
-    \Sigma : \dot x = f(t, x, u)
+	\Sigma : \dot x = f(t, x, u)
 \end{equation}
 The system $\Sigma$ is ISS if $\exists\beta \in \mathcal{K} \mathcal{L}$ and $\exists\gamma \in \mathcal{K}$ such that for any $t_0 \geq 0$, any $x_0 = x(t_0) \in \mathbb{R}^n$ and any bounded input $t \mapsto u(t)$, the solution $t\mapsto x(t)$ exists $\forall t \geq t_0$ and satisfies
 \begin{equation}
-    ||x(t)||\leq\beta||x_0||,t-t_0)+\gamma(sup||u(\tau)||)
+	||x(t)||\leq\beta||x_0||,t-t_0)+\gamma(sup||u(\tau)||)
 \end{equation}
-\subsection{Practice}
+\subsection{Application}
 If a system is ISS stable, then:
 \begin{enumerate}[i)]
-    \item for u=0, the origin is GUAS (0-GUAS)
-    \item for a bounded input t $\mapsto$ u(t), every solution t $\mapsto$ x(t) is bounded.
+	\item for u=0, the origin is GUAS (0-GUAS)
+	\item for a bounded input t $\mapsto$ u(t), every solution t $\mapsto$ x(t) is bounded.
 \end{enumerate}
 If one of these is not satisfied, the system is \textbf{not} ISS.
+\begin{frm-ex}[Example of ISS]
+The system is given by
+$$
+	\begin{aligned}
+		 & \dot{x}_1=-x_1+x_1^2 x_2 \\
+		 & \dot{x}_2=-x_1^3-x_2+u
+	\end{aligned}
+$$
+Let $V(x)$ be given by
+$$
+	V(x)=\frac{1}{2}\left(x_1^2+x_2^2\right)
+$$
+which is a $\mathcal{K}_{\infty}$ function. First we will prove that the origin is 0-GUAS, i.e. if the system is GUAS when $u=0$. Then we will prove that the system is ISS.
+\begin{equation*}
+	\begin{split}
+		\dot V(x) & = x_1 \dot x_1 + x_2 \dot x_2                  \\
+		          & = x_1 (-x_1 + x_1^{2}x_2) + x_2 (-x_1^{3}-x_2) \\
+		          & = -x_1^{2} - x_2^{2}
+	\end{split}
+\end{equation*}
+We can further apply the rules of GUAS, and prove that the system is 0-GUAS. Further, we will prove ISS, i.e. when $x \neq 0$. ''
+$$
+	\begin{aligned}
+		\dot{V}(x) & =x_1 \dot{x}_1+x_2 \dot{x}_2                                 \\
+		           & =x_1\left(-x_1+x_1^2 x_2\right)+x_2\left(-x_1^3-x_2+u\right) \\
+		           & =-x_1^2+x_1^3 x_2-x_1^3 x_2-x_2^2+u x_2                      \\
+		           & =-x_1^2-x_2^2+u x_2                                          \\
+		           & =-\|x\|_2^2+u x_2
+	\end{aligned}
+$$
+and upper bounded as
+$$
+	\begin{aligned}
+		\dot{V}(x) & \leq-\|x\|_2^2+\left|u x_2\right|                            \\
+		           & =-\|x\|_2^2+|u|\left|x_2\right|                              \\
+		           & \leq-\|x\|_2^2+|u|\|x\|_2                                    \\
+		           & =-\|x\|_2^2+|u|\|x\|_2+\theta\|x\|_2^2-\theta\|x\|_2^2       \\
+		           & =-(1-\theta)\|x\|_2^2+|u|\|x\|_2-\theta\|x\|_2^2             \\
+		           & =-(1-\theta)\|x\|_2^2-\left(\theta\|x\|_2-|u|\right)\|x\|_2  \\
+		           & \leq-(1-\theta)\|x\|_2^2 \forall \theta\|x\|_2-|u| \geq 0    \\
+		           & =-(1-\theta)\|x\|_2^2 \forall\|x\|_2 \geq \frac{|u|}{\theta}
+	\end{aligned}
+$$
+where $\theta \in(0,1)$. Hence, by Theorem 4.19 , the system is input-to-state stable (ISS) with $\rho(|u|)=\frac{|u|}{\theta}$.
+\end{frm-ex}
+\subsubsection{Some important things when evaluating ISS}
+\begin{itemize}
+	\item The $\theta $ trick is almost always used
+	\item $\left\| x \right\|_2 = \sqrt{x_1^{2}+x_2^{2}}$
+	\item $x_1 \leq \left\| x \right\|_2$
+	\item If possible the system can be viewed as cascade.
+\end{itemize}
+\begin{frm-ex}[Example of ISS with cascade]
+The system is given by
+\begin{equation}
+	\dot{x}_1=-x_1+x_2^2\\
+\end{equation}
+\begin{equation}
+	\dot{x}_2=-x_2 
+\end{equation}
+
+The system (12) is a linear system and its eigenvalue is negative. The origin of (12) is therefore GES.
+
+We now want to show that the system (11) is ISS when $x_2$ is viewed as input. Let $V=\frac{1}{2} x_1^2$. Then
+$$
+	\begin{aligned}
+		\dot{V} & =x_1\left(-x_1+x_2^2\right)=-x_1^2+x_1 x_2^2                                  \\
+		        & =-(1-\theta) x_1^2-\theta x_1^2+x_1 x_2^2                                     \\
+		        & \leq-(1-\theta) x_1^2-\theta x_1^2+\left|x_1\right| x_2^2                     \\
+		        & \leq-(1-\theta) x_1^2 \quad \forall\left|x_1\right| \geq \frac{x_2^2}{\theta}
+	\end{aligned}
+$$
+where $0<\theta<1$. Since $\rho(r)=\frac{r^2}{\theta}$ is a class $\mathcal{K}$ function, by Theorem 4.19 the system (5) is ISS with $x_2$ as input. Hence by Lemma 4.7, the origin of the cascade system (5)-(6) is gloally asymptotically stable.
+(Note: While it is tempting to use Lemma 4.6 to conclude that the system (5) is ISS, the function $f\left(t, x_1, x_2\right)=-x_1+x_2^2$ is not globally Lipschitz in $x_2$, and the lemma cannot be applied.)
+\end{frm-ex}
 \end{document}
