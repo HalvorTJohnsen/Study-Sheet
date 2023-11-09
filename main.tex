@@ -1196,4 +1196,13 @@ Theorem 6.3 Consider the feedback connection of two time-invariant dymamical sys
 	\item one component is strictly passive and the other one is -nt strictly passive and zero-state observable.
 \end{itemize}
 Furthermore, if the storage function for each component is radially unbounded, the origin is globally asymptotically stable.
+\subsection{Summary for Solving Passivity Problems}
+\begin{equation}
+	\dot{V} \underbrace{\leq u^{T}y}_\text{Passivity} - \begin{cases}
+		\psi (x), \qquad &SSP \\
+		u^{T}\varphi(u), \qquad &ISP \\
+		y^{T}\rho(y), \qquad &OSP \\
+
+	\end{cases}
+\end{equation}
 \end{document}
