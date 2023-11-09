@@ -13,11 +13,21 @@
 \usepackage{float}
 \usepackage{color}
 \usepackage[shortlabels]{enumitem}
-
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
+\usepackage{tikz}
+
+
+
+
+\usetikzlibrary{shapes,arrows}
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=3em]
+\tikzstyle{sum} = [draw, circle, node distance=1.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
 
 \pdfsuppresswarningpagegroup=1
 
@@ -709,16 +719,16 @@ If one of these is not satisfied, the system is \textbf{not} ISS.
 \subsection{ISS (T 4.19)}
 Let $V:[0, \infty) \times R^n \rightarrow R$ be a continuously differentiable function such that
 $$
-\begin{aligned}
-\alpha_1(\|x\|) & \leq V(t, x) \leq \alpha_2(\|x\|) \\
-\frac{\partial V}{\partial t}+\frac{\partial V}{\partial x} f(t, x, u) & \leq-W_3(x), \quad \forall\|x\| \geq \rho(\|u\|)>0
-\end{aligned}
+	\begin{aligned}
+		\alpha_1(\|x\|)                                                        & \leq V(t, x) \leq \alpha_2(\|x\|)                  \\
+		\frac{\partial V}{\partial t}+\frac{\partial V}{\partial x} f(t, x, u) & \leq-W_3(x), \quad \forall\|x\| \geq \rho(\|u\|)>0
+	\end{aligned}
 $$
 $\forall(t, x, u) \in[0, \infty) \times R^n \times R^m$, where $\alpha_1, \alpha_2$ are class $\mathcal{K}_{\infty}$ functions, $\rho$ is a class $\mathcal{K}$ function, and $W_3(x)$ is a continuous positive definite function on $R^n$. Then, the system (4.44) is input-to-state stable with $\gamma=\alpha_1^{-1} \circ \alpha_2 \circ \rho$.
 \subsection{ISS (L 4.6)}
 Suppose $f(t, x, u)$ is continuously differentiable and globally Lipschitz in $(x, u)$, uniformly in $t$. If the unforced system (4.45) has a globally exponentially stable equilibrium point at the origin $x=0$, then the system (4.44) is input-to-state stable.
 \subsection{ISS with cascade and $x_2$ as input}
-Under the stated assumptions, if the system 
+Under the stated assumptions, if the system
 \begin{equation}
 	\dot{x}_1=f_1(t, x_1, x_2)
 	\label{eqn: cascade1}
@@ -726,7 +736,7 @@ Under the stated assumptions, if the system
 \begin{equation}
 	\dot{x}_2=f_2(t, x_2)
 	\label{eqn: cascade2}
-	\end{equation}
+\end{equation}
 with $x_2$ as input, is input-to-state stable and the origin of (\ref{eqn: cascade2}) is globally uniformly asymptotically stable, then the origin of the cascade system (\ref{eqn: cascade1}) and (\ref{eqn: cascade2}) is globally uniformly asymptotically stable.
 \begin{frm-ex}[Example of ISS]
 The system is given by
@@ -786,7 +796,7 @@ The system is given by
 	\dot{x}_1=-x_1+x_2^2\\
 \end{equation}
 \begin{equation}
-	\dot{x}_2=-x_2 
+	\dot{x}_2=-x_2
 \end{equation}
 
 The system (12) is a linear system and its eigenvalue is negative. The origin of (12) is therefore GES.
@@ -815,19 +825,19 @@ where $H$ is some mapping. $u$ belongs to a space of signals that map the time i
 \\\\
 \begin{itemize}
 	\item For the space of piecewise continuous signals, bounded functions:
-	\begin{equation}
-		\left\| u \right\| _{\mathcal{L}_\infty } = \sup_{t \geq 0} \left\| u(t) \right\| < \infty \quad \Rightarrow  \quad \mathcal{L}^m_\infty
-	\end{equation}
+	      \begin{equation}
+		      \left\| u \right\| _{\mathcal{L}_\infty } = \sup_{t \geq 0} \left\| u(t) \right\| < \infty \quad \Rightarrow  \quad \mathcal{L}^m_\infty
+	      \end{equation}
 	\item For the space of piecewise continuous signals, square integrable functions:
-	\begin{equation}
-		\left\| u \right\|_{\mathcal{L}_2} = \sqrt{\int_{0}^{\infty} u^T(t) u(t) dt} < \infty \quad \Rightarrow  \quad \mathcal{L}^m_2
-	\end{equation}
-	More generally, for the space of piecewise continuous signals, $p$-integrable functions:
-	\begin{equation}
-		\left\| u \right\|_{\mathcal{L}_p} = \left( \int_{0}^{\infty} \left\| u(t) \right\|^p dt \right)^{\frac{1}{p}} < \infty \quad \Rightarrow  \quad \mathcal{L}^m_p
-	\end{equation}
+	      \begin{equation}
+		      \left\| u \right\|_{\mathcal{L}_2} = \sqrt{\int_{0}^{\infty} u^T(t) u(t) dt} < \infty \quad \Rightarrow  \quad \mathcal{L}^m_2
+	      \end{equation}
+	      More generally, for the space of piecewise continuous signals, $p$-integrable functions:
+	      \begin{equation}
+		      \left\| u \right\|_{\mathcal{L}_p} = \left( \int_{0}^{\infty} \left\| u(t) \right\|^p dt \right)^{\frac{1}{p}} < \infty \quad \Rightarrow  \quad \mathcal{L}^m_p
+	      \end{equation}
 \end{itemize}
-where \textbf{m} is the dimension of $u$, and \textbf{q} is the dimension of $y$. 
+where \textbf{m} is the dimension of $u$, and \textbf{q} is the dimension of $y$.
 \\\\
 \textbf{If we think of $u \in  \mathcal{L}^m$ as a "well behaved" system, the question to ask is whether the putput $y \in \mathcal{L}^q$ is also "well behaved".}
 \\\\
@@ -839,16 +849,16 @@ and $u_\tau$ is defined by
 \begin{equation}
 	u_\tau (t) = \begin{cases}
 		u(t) & \text{if } t \geq \tau \\
-		0 & \text{if } t < \tau
+		0    & \text{if } t < \tau
 	\end{cases}
 \end{equation}
 \begin{frm-ex}[Example of extended space]
-	\begin{equation*}
-		\begin{array}{lllll}
-			u(t)=\sin \omega t & \Rightarrow & u \in L_{2 e} & \text { but } & u \notin L_2 \\
-			y(t)=t & \Rightarrow & y \in L_{\infty e} & \text { but } & y \notin L_{\infty}
-		\end{array}
-	\end{equation*}
+\begin{equation*}
+	\begin{array}{lllll}
+		u(t)=\sin \omega t & \Rightarrow & u \in L_{2 e}      & \text { but } & u \notin L_2        \\
+		y(t)=t             & \Rightarrow & y \in L_{\infty e} & \text { but } & y \notin L_{\infty}
+	\end{array}
+\end{equation*}
 \end{frm-ex}
 I.e. we can deal wiith unbounded signals, such that a unbounded singal can me bounded in an extended space, and an non-integrable function can be integrable in an extended space.
 \\\\
@@ -864,54 +874,54 @@ $H: \mathcal{L}_e^m \rightarrow \mathcal{L}_e^q$ is causal if $\forall \tau  < \
 \\\\
 Further we can introduce that $H:\mathcal{L}_e^m \rightarrow \mathcal{L}_e^{q}$ is \textbf{finite gain $\mathcal{L}$-stable} if:
 \begin{enumerate}[(i)]
-	\item $H:\mathcal{L}_e^{m}\rightarrow \mathcal{L}_e^{q}$ 
-	\item $\left\| (Hu)_\tau  \right\| \leq \gamma  \left\| u_\tau  \right\| + \beta$ for some $\left| \gamma  \right| < \infty $ and $\left| \beta  \right| < \infty $   
-\end{enumerate} 
+	\item $H:\mathcal{L}_e^{m}\rightarrow \mathcal{L}_e^{q}$
+	\item $\left\| (Hu)_\tau  \right\| \leq \gamma  \left\| u_\tau  \right\| + \beta$ for some $\left| \gamma  \right| < \infty $ and $\left| \beta  \right| < \infty $
+\end{enumerate}
 where $\beta $ is called the bias term (zero biased : $\beta = 0$).
 \\\\
-To summary we have that $H : \mathcal{L}_{pe}^{m} \to \mathcal{L}_{pe}^{q} \text{ is } \mathbf{\mathcal{L}_p}$ stable iff 
+To summary we have that $H : \mathcal{L}_{pe}^{m} \to \mathcal{L}_{pe}^{q} \text{ is } \mathbf{\mathcal{L}_p}$ stable iff
 \begin{enumerate}[i)]
 	\item $\exists \alpha $ class $\mathcal{K}$ $\qquad \alpha : [0, \infty) \to [0, \infty) $
-	\item $\exists \text{ constant } \beta  \geq 0$  
-\end{enumerate} 
+	\item $\exists \text{ constant } \beta  \geq 0$
+\end{enumerate}
 such that
 \begin{equation}
-	\left\| (Hu)_\tau  \right\|_{\mathcal{L}_p} \leq \alpha (\left\| u_\tau  \right\|_{\mathcal{L}_p}) + \beta, \qquad \forall u \in \mathcal{L}_{pe}^{m}, \forall \tau \in [0, \infty) 
+	\left\| (Hu)_\tau  \right\|_{\mathcal{L}_p} \leq \alpha (\left\| u_\tau  \right\|_{\mathcal{L}_p}) + \beta, \qquad \forall u \in \mathcal{L}_{pe}^{m}, \forall \tau \in [0, \infty)
 \end{equation}
 Where it is BIBO stability $\equiv \mathcal{L}_\infty $ stability.
 \begin{frm-ex}[Input-Output stability]
-	Consider the following system
-	$$ 
-		y = u^{\frac{1}{3}}
-	$$ 
-	which is a $\mathcal{K}_\infty $ class function. Further we can assume that $u \in  \mathcal{L}_{\infty  e}$m, which implies\
-	\begin{equation*}
-		sup \left| u_\tau (t) \right| < 0, \qquad \forall t [0, \infty )
-	\end{equation*} 
-	We then have
-	\begin{equation*}
-		\begin{split}
-			\left\| (Hu)_\tau \right\|_{\mathcal{L}_\infty } = sup \left| u_\tau(t)^\frac{1}{3} \right|  = sup \left| u_\tau  \right|^\frac{1}{3}
-			 = (sup \left| u_\tau  \right| )^\frac{1}{3} = (\left\| u_\tau  \right\|_{\mathcal{L}_\infty })^\frac{1}{3}
-		\end{split}
-	\end{equation*}
-	we can now choose a $\alpha = r^{\frac{1}{3}}$ which is a class $\mathcal{K}$ function. We then have
-	\begin{equation*}
-		\left\| (Hu)_\tau  \right\|_{\mathcal{L}_\infty } = \alpha (\left\| u_t \right\|_{\mathcal{L}_\infty }) 
-	\end{equation*}
-	which satisfies the definition of $\mathcal{L}_\infty $ stability. We also have zero bias here where $\beta = 0$. We can further analyse the finite gain stability. If we take a closer look at the theorem we see that
-	\begin{equation*}
-		\left\| (Hu)_\tau
-		\right\|_{\mathcal{L}_\infty } = \alpha (\left\| u_t \right\|_{\mathcal{L}_\infty })  \leq \gamma \left\| u_\tau  \right\|_{\mathcal{L}_\infty } + \beta
-	\end{equation*}
-	I.e. we must find a $\beta$ such that this statement holds (see figure 2).
-	\begin{equation*}
-		r^{\frac{1}{3}} = \gamma r \Rightarrow r = \gamma ^{-\frac{2}{3}} \Rightarrow \gamma r= \gamma^\frac{-1}{2}
-	\end{equation*}
-	which leads to
-	\begin{equation*}
-		\left\| (Hu)_\tau  \right\| _{\mathcal{L}_\infty } \leq \gamma \left\| u_\tau  \right\|_{\mathcal{L}_\infty} + \frac{1}{\sqrt{\gamma}}
-	\end{equation*}
+Consider the following system
+$$
+	y = u^{\frac{1}{3}}
+$$
+which is a $\mathcal{K}_\infty $ class function. Further we can assume that $u \in  \mathcal{L}_{\infty  e}$m, which implies\
+\begin{equation*}
+	sup \left| u_\tau (t) \right| < 0, \qquad \forall t [0, \infty )
+\end{equation*}
+We then have
+\begin{equation*}
+	\begin{split}
+		\left\| (Hu)_\tau \right\|_{\mathcal{L}_\infty } = sup \left| u_\tau(t)^\frac{1}{3} \right|  = sup \left| u_\tau  \right|^\frac{1}{3}
+		= (sup \left| u_\tau  \right| )^\frac{1}{3} = (\left\| u_\tau  \right\|_{\mathcal{L}_\infty })^\frac{1}{3}
+	\end{split}
+\end{equation*}
+we can now choose a $\alpha = r^{\frac{1}{3}}$ which is a class $\mathcal{K}$ function. We then have
+\begin{equation*}
+	\left\| (Hu)_\tau  \right\|_{\mathcal{L}_\infty } = \alpha (\left\| u_t \right\|_{\mathcal{L}_\infty })
+\end{equation*}
+which satisfies the definition of $\mathcal{L}_\infty $ stability. We also have zero bias here where $\beta = 0$. We can further analyse the finite gain stability. If we take a closer look at the theorem we see that
+\begin{equation*}
+	\left\| (Hu)_\tau
+	\right\|_{\mathcal{L}_\infty } = \alpha (\left\| u_t \right\|_{\mathcal{L}_\infty })  \leq \gamma \left\| u_\tau  \right\|_{\mathcal{L}_\infty } + \beta
+\end{equation*}
+I.e. we must find a $\beta$ such that this statement holds (see figure 2).
+\begin{equation*}
+	r^{\frac{1}{3}} = \gamma r \Rightarrow r = \gamma ^{-\frac{2}{3}} \Rightarrow \gamma r= \gamma^\frac{-1}{2}
+\end{equation*}
+which leads to
+\begin{equation*}
+	\left\| (Hu)_\tau  \right\| _{\mathcal{L}_\infty } \leq \gamma \left\| u_\tau  \right\|_{\mathcal{L}_\infty} + \frac{1}{\sqrt{\gamma}}
+\end{equation*}
 \end{frm-ex}
 
 \begin{figure}
@@ -919,4 +929,271 @@ Where it is BIBO stability $\equiv \mathcal{L}_\infty $ stability.
 	\resizebox{0.45\textwidth}{!}{\input{figures/finite_stability.eps_tex}}
 	\caption[short]{Example 10}
 \end{figure}
+\subsection{The small-Gain Theorem}
+\begin{center}
+	\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+		% We start by placing the blocks
+		\node [input, name=input1] {};
+		\node [output, name=output2, below of=input1] {};
+		\node [sum, right of=input1] (sum1) {};
+		\node [block, right of=sum1] (H1) {$H_1$};
+		\node [block, below of= H1]  (H2) {$H_2$};
+		\node [sum, right of= H2]  (sum2) {};
+		\node [output, right of= H1] (output1) {};
+		\node [input, right of= sum2] (input2) {};
+
+		% Once the nodes are placed, connecting them is easy.
+		\draw [draw,->] (input1) -- node {$u_1$} (sum1);
+		\draw [draw,->] (input2) -- node {$u_2$} (sum2);
+		\draw [->] (sum1) -- node {$e_1$} (H1);
+		\draw [->] (H1) -- node [name=y1, pos = 0.65] {$y_1$}(output1);
+		\draw [->] (sum2) -- node {$e_2$} (H2);
+		\draw [->] (y1) -- node [pos = 0.89]{$+$}(sum2);
+		\draw [->] (H2) -- node [name=y2, pos = 0.5] {$y_2$}(output2);
+		\draw [->] (y2) -- node [pos = 0.45]{$-$}(sum1);
+	\end{tikzpicture}
+\end{center}
+The interconnection where $H_1$ and $H_2$ are finite-gain $\mathcal{L}$-stable, i.e
+\begin{equation*}
+	\begin{aligned}
+		 & \left\|y_{1 \tau}\right\|_{\mathcal{L}} \leq \gamma_1\left\|e_{1 \tau}\right\|_{\mathcal{L}}+\beta_1 \\
+		 & \left\|y_{2 \tau}\right\|_{\mathcal{L}} \leq \gamma_2\left\|e_{2 \tau}\right\|_{\mathcal{L}}+\beta_2
+	\end{aligned}
+\end{equation*}
+is finite-gain $\mathcal{L}$-stable if
+\begin{equation}
+	\gamma _1 \gamma _2 < 1
+\end{equation}
+\section{Passivity}Passivity is a tool for ananlysis of nonlinear systems, with an input-output description. It also has an interesting energy interpretation. It also relates nicely to Lyapunov stability and $\mathcal{L}_2$ stability.
+\subsection{Memoryless functions}
+In a simple sense passivity for a memoryless function $y = h(t,u)$ where $h : [0, \infty ) \times \mathbb{R}^p \to \mathbb{R}^{p}$ is passive if $u^T y \geq 0$ for the sector $h \in [0, \infty]$. The sector $h \in [0, \infty]$ is i.e. the space between two lines with a slope of $0$ and $\infty$.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width = 0.5\textwidth]{figures/placeholder-image.png}
+	\caption{Picture of the sector $h \in [0, \infty]$}
+\end{figure}
+\\
+I.e. is this sector the first and third quadrant of the $u-y$ plane. For vector cases we can decouple $h(t,u)$, such that $h_i(t,u)$ only depends on $u_i$
+\begin{equation*}
+	h(t,u) = \begin{bmatrix}
+		h_1(t,u_1) \\
+		h_2(t,u_2) \\
+		\vdots     \\
+		h_p(t,u_p)
+	\end{bmatrix}
+\end{equation*}
+\\\\
+A extreme case of passivity happens when $u^{T}y=0$. In this case, we say that the system is \textbf{lossless}.
+\\\\
+Futher consider a function $h$ satisfying $u^{T}y \geq u^{T} \phi (u)$ for some function $\phi(u)$. When $u^{T} \phi(u) > 0$ for all $u \neq 0$, $h$ called \textbf{input strictly passive}. The term $u^{T}\phi (u)$ represents the "excess" of passivity, and if $u^{T}\phi (u)$ is negative for some value $u$, then the function $h$ is not necessarily passive. The term $u^{T} \phi (u)$ represents the "shortage" of passivity. If we have a scalar example where $phi(u) = \epsilon u$, then $h$ belongs to the sector $[\epsilon , \infty ]$. If $epsilon > 0$ we have excess passivity, and when $\epsilon  < 0$ we have shortage if passivity. Excess or shortage of passivity can be removec by the input-output feedforward operation. With the new output defined as
+\begin{figure}[h!]
+	\centering
+	% BEGIN: ed8c6549bwf9
+	\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+		% We start by placing the blocks
+		\node [input, name=input] {};
+		\node [block, name = blank, right of = input] {};
+		\node [block, name = phi, above of = blank] {$\phi (\cdot)$};
+		\node [sum, name = sum , right of = blank] {};
+		\node [output, name = output, right of = sum] {};
+
+		\draw [->] (input) -- node[name = u] {$u$} (blank);
+		\draw [->] (blank) -- node {$y$} (sum);
+		\draw [->] (u) |- node {} (phi);
+		\draw [->] (phi) -| node[pos = 0.9] {$-$} (sum);
+		\draw [->] (sum) -- node {$\tilde{y}$} (output);
+	\end{tikzpicture}
+	% END: ed8c6549bwf9
+	\caption{Removal of excess or shortage of passivity by input-feedforward operation}
+\end{figure}
+With the new output defined as $\tilde{y}=y-\phi (u)$
+\begin{equation}
+	u^{T} \tilde{y} = u^{T} y - u^{T} \phi (u) = 0
+\end{equation}
+
+\begin{figure}[h!]
+	\centering
+	% BEGIN: 8d7f6e5g4h3
+	\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+		% We start by placing the blocks
+		\node [input, name=input] {};
+		\node [sum, name = sum , right of = input] {};
+		\node [block, name = blank, right of = sum] {};
+		\node [block, name = phi, below of = blank] {$\phi (\cdot)$};
+		\node [output, name = output, right of = blank] {};
+
+		\draw [->] (input) -- node[name = u] {$\tilde{u}$} (sum);
+		\draw [->] (sum) -- node {$u$} (blank);
+		\draw [->] (blank) -- node[name = y]{$y$} (output);
+		\draw [->] (y) |- node {} (phi);
+		\draw [->] (phi) -| node[pos = 0.9] {$+$} (sum);
+
+
+	\end{tikzpicture}
+	% END: 8d7f6e5g4h3
+	\caption{Removal of excess or shortage of passivity by output-feedback operation}
+\end{figure}
+We can also remove excess or shortage of passivity by output-feedback operation. With the new input defined as $\tilde{u}=u+\phi (y)$
+\begin{equation}
+	\tilde{u}^{T} y = [u^{T} y + \rho (y)]^{T} y = \geq y^{T} \rho (y) - y^{T} \rho (y) = 0
+\end{equation}
+To summarize we have the following
+\begin{itemize}
+	\item passive if $u^{T}y \geq 0$
+	\item lossless if $u^{T}y = 0$
+	\item input-feedforward passive if $u^{T}y \geq u^{T} \phi (u)$ for some function $\phi (u)$
+	\item input strictly passive if $u^{T}y \geq u^{T} \phi (u)$ for some function $\phi (u)$ and $u^{T} \phi (u) > 0$ for all $u \neq 0$
+	\item output-feedback passive if $u^{T}y \geq u^{T} \rho (y)$ for some function $\rho (y)$
+	\item output strictly passive if $u^{T}y \geq u^{T} \rho (y)$ for some function $\rho (y)$ and $u^{T} \rho (y) > 0$ for all $y \neq 0$
+\end{itemize}
+\subsection{State Models}
+Consider the system
+\begin{equation}
+	\begin{aligned}
+		\dot{x} & = f(t,x,u) \\
+		y       & = h(t,x,u)
+		\label{eqn: state model}
+	\end{aligned}
+\end{equation}
+where $f : \mathbb{R}^{n} \times \mathbb{R}^{p} \to \mathbb{R}^{n}$ is Locally Lipschitz, $h : \mathbb{R}^{n} \times \mathbb{R}^{p} \to \mathbb{R}^{p}$ is continous $f(0,0) = 0, h(0,0)=0$
+\subsubsection{Passivity for dynamical systems (D 6.3)}
+The system (\ref{eqn: state model}) is said to be passive if there exits a continously differentiable positive function $V(x)$ (called the storage function) such that
+\begin{equation}
+	u^{T}y \geq \dot V =\frac{\partial V}{\partial x} f(x,u), \qquad \forall (x,u) \in  \mathbb{R}^{n} \times \mathbb{R}^p
+\end{equation}
+\begin{itemize}
+	\item lossless if $u^T y=\dot{V}$.
+	\item input-feedforward passive if $u^T y \geq \dot{V}+u^T \varphi(u)$ for some function $\varphi$.
+\item input strictly passive if $u^T y \geq \dot{V}+u^T \varphi(u)$ and $u^T \varphi(u)>0, \forall u \neq 0$
+\item output-feedback passive if $u^T y \geq \dot{V}+y^T \rho(y)$ for some function $\rho$.
+\item output strictly passive if $u^T y \geq \dot{V}+y^T \rho(y)$ and $y^T \rho(y)>0, \forall y \ne 0q$
+\item strictly passive if $u^T y \geq \dot{V}+\psi(x)$ for some positive d definite function $\psi $
+\end{itemize}
+In all cases, the inequality should hold for all $(x, u)$.
+\subsection{$\mathcal{L}_2$ and Lyapunov stable}
+\subsubsection{Finite Gain $\mathcal{L}_2$ stability (L 6.5)}
+If the system (\ref{eqn: state model}) is strictly passive with $\rho (y) = \delta y, \delta > 0$ then the system is finite gain $\mathcal{L}_2$ stable, with $\mathcal{L}_2$ gain $\delta \leq \frac{1}{\delta}$
+\begin{frm-prf}[Proof of dinite-gain $\mathcal{L}_2$ stabiliy]
+	Asume output strict passivity with $\rho (y) = \delta y$
+	\begin{equation}
+		\begin{split}
+			u^{T}y &\leq  \dot V + \delta y^{T}y \\
+			\dot V & \leq u^{T}y - \delta y^{T}y \\
+			& \leq \frac{\delta }{2}y^{T}y + \frac{1}{2 \delta} u^{T}y - \delta y^{T}y \text{ Youngs inequality}\\
+			&= \frac{1}{2 \delta }u^{T}u - \frac{\delta }{2}y^{T}y \\
+			y y^{T}  & leq \frac{1}{\delta ^{2}}u^{T}u - \frac{2}{3}\dot V 
+		\end{split}
+	\end{equation}
+	We then itegrate over $[0, \tau ]$ with respect to time
+	\begin{equation}
+		\int_{\tau}^{0} y(\tau)^T y(\tau) d \tau \leq \frac{1}{\delta ^{2}} \int_{0}^{\tau} u(\tau)^T u(\tau) d \tau - \frac{2}{3} V(x(\tau)) + \frac{2}{\delta } V(x(0))
+	\end{equation}
+	this states that $\left\| y_\tau  \right\|_{\mathcal{L}_2} ^{2} \leq \frac{1}{\delta ^{2}´} \left\| u_\tau  \right\|^2{\mathcal{L}_2} + \frac{2}{\delta } V(x(0))$ which is can be formed on the form of finite gain stability $\left\| y_\tau \right\|_{\mathcal{L}_2} \leq \frac{1}{\delta } \left\| u \right\| _{\mathcal{L}_2} + \sqrt{\frac{2}{delta}V(x(0))} $
+\end{frm-prf}
+\subsubsection{Lyapunov stable (0-stable) (L 6.6)}
+If the system (\ref{eqn: state model}) is passive with a psoitive storage function $V(x)$, then the origin is Lyapunov stable (0-stable), $f(x,0)$.
+\begin{frm-prf}[Positive definite storage function]
+	Consider $\exists V$ s.t.
+	\begin{enumerate}[i)]
+		\item $V \text{ is } C^1$
+		\item $V$ is positive definite
+		\item $u^{T}y \geq \dot V$
+	\end{enumerate}
+	if $u = 0 \to 0 \geq \dot{V}$ (Standard Lyapunov theory).
+\end{frm-prf}
+\subsection{Asymptoticallly stable (0-AS) (L 6.7)}
+Lemma 6.7 Consider the system (\ref{eqn: state model}). The origin of $\dot{x}=f(x, 0)$ is asymptotically stable if the system is
+\begin{itemize}
+	\item strictly passive or
+	\item output strictly passive and zero-state observable.
+\end{itemize}
+Furthermore, if the storage function is radially unbounded, the origin will be globally asymptotically stable.
+\\\\
+(\ref{eqn: state model}) us \textbf{zero-state observable} iff no solution $\dot{x}=f(x,0)$ can stay identically $S 0 \{x \in \mathbb{R}^{n} | h(x,0) = 0\}$ other than the trivial solution $x(t) = 0$.
+\subsection{Feedback Systems: Passivity Theorems (T 6.1)}
+\begin{center}
+	\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+		% We start by placing the blocks
+		\node [input, name=input1] {};
+		\node [output, name=output2, below of=input1] {};
+		\node [sum, right of=input1] (sum1) {};
+		\node [block, right of=sum1] (H1) {$H_1$};
+		\node [block, below of= H1]  (H2) {$H_2$};
+		\node [sum, right of= H2]  (sum2) {};
+		\node [output, right of= H1] (output1) {};
+		\node [input, right of= sum2] (input2) {};
+
+		% Once the nodes are placed, connecting them is easy.
+		\draw [draw,->] (input1) -- node {$u_1$} (sum1);
+		\draw [draw,->] (input2) -- node {$u_2$} (sum2);
+		\draw [->] (sum1) -- node {$e_1$} (H1);
+		\draw [->] (H1) -- node [name=y1, pos = 0.65] {$y_1$}(output1);
+		\draw [->] (sum2) -- node {$e_2$} (H2);
+		\draw [->] (y1) -- node [pos = 0.89]{$+$}(sum2);
+		\draw [->] (H2) -- node [name=y2, pos = 0.5] {$y_2$}(output2);
+		\draw [->] (y2) -- node [pos = 0.45]{$-$}(sum1);
+	\end{tikzpicture}
+\end{center}
+where 
+\begin{equation}
+	x = \begin{bmatrix}
+		x_1 \\
+		x_2
+	\end{bmatrix}, \quad
+	u = \begin{bmatrix}
+		u_1 \\
+		u_2
+		\end{bmatrix}, \quad
+	y = \begin{bmatrix}
+		y_1 \\
+		y_2
+		\end{bmatrix}
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+		e_1 &= u_1 - h_2(x_2,e_2) \\
+		e_2 &= u_2 + h_1(x_1,3_1)
+	\end{split}
+\end{equation}
+\textbf(The feedback connection of two passive systems is passive.)
+\begin{frm-prf}[Proof of of the passivity of feedback connection]
+	Let $V_1\left(x_1\right)$ and $V_2\left(x_2\right)$ be the storage functions for $H_1$ and $H_2$, respectively. If either component is a memoryless function, take $V_i=0$. Then,
+$$
+e_i^T y_i \geq \dot{V}_i
+$$
+
+From the feedback connection of Figure 6.11, we see that
+$$
+e_1^T y_1+e_2^T y_2=\left(u_1-y_2\right)^T y_1+\left(u_2+y_1\right)^T y_2=u_1^T y_1+u_2^T y_2
+$$
+
+Hence,
+$$
+u^T y=u_1^T y_1+u_2^T y_2 \geq \dot{V}_1+\dot{V}_2
+$$
+
+Taking $V(x)=V_1\left(x_1\right)+V_2\left(x_2\right)$ as the storage function for the feedback connection, we obtain
+$$
+u^T y \geq \dot{V}
+$$
+Using Theorem 6.1 and the results of the previous section on stabilty properties of passive systems, we can arrive at some straightforward conclusions on stability of the feedback connection. We start with$\mathcal{L}_2$ stability.
+\end{frm-prf}
+\subsubsection{Feedback Systems: Finitegain $\mathcal{L}_2$stable (T 6.2)}
+Theorem 6.2 Consider the feedback connection of Figure 6.11 and suppose each feedback component satisfies the inequality
+$$
+e_i^T y_i \geq \dot{V}_i+\varepsilon_i e_i^T e_i+\varepsilon_i y_i^T y_i, \text { for } i=1,2
+$$
+for some storage function $V_i\left(x_i\right)$. Then, the closed-loop map from $u$ to $;$ is finite gain $\mathcal{L}_2$ stable if
+$$
+\varepsilon_1+\delta_2>0 \text { and } \varepsilon_2+\delta_1>0
+$$
+\subsubsection{Asymptotically stability of feedback systems(T 6.3)}
+Theorem 6.3 Consider the feedback connection of two time-invariant dymamical systems. The origin of the closed-loop system (when $u=0)$ is asympteticanty stable if
+\begin{itemize}
+	\item both feedback components arc sticiliy passive,
+	\item both feedback components are output strictly passive and zero-state observable, or
+	\item one component is strictly passive and the other one is -nt strictly passive and zero-state observable.
+\end{itemize}
+Furthermore, if the storage function for each component is radially unbounded, the origin is globally asymptotically stable.
 \end{document}
