@@ -1205,4 +1205,11 @@ Furthermore, if the storage function for each component is radially unbounded, t
 
 	\end{cases}
 \end{equation}
+
+\subsubsection{Solving passivity with transfer functions}
+\begin{itemize}
+    \item If given a transfer function H(s), the system is passive if $\mathfrak{R}[H(j\omega)]\geq0, \forall \omega\in\mathbbR$
+    \item The system is ISP of $\exists\delta>0$ s.t. $\mathfrak{R}[H(jw)]>\delta$ $\forall \omega\in\mathbbR$.
+    \item The system is OSP if $\exists\epsilon$ s.t. $\mathfrak{R}[H(j\omega)] \geq \epsilon|H(j\omega)|^2, \epsilon > 0, \forall \omega \in \mathbbR$ 
+\end{itemize}
 \end{document}
